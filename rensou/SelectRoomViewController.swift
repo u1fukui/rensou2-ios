@@ -14,9 +14,18 @@ class SelectRoomViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationItem.titleView = UIImageView(image:UIImage(named:"select_room_title"))
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let color = UIColor(hex: "23ac0e")
+        self.navigationController?.navigationBar.barTintColor = color
+        self.navigationController?.navigationBar.tintColor = color
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

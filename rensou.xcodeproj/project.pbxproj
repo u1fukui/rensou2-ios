@@ -11,6 +11,7 @@
 		DB3E21121EE4048600F7CC24 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E21111EE4048600F7CC24 /* RoomCell.swift */; };
 		DB76A1E71EE4207A00125B09 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76A1E61EE4207A00125B09 /* RoomType.swift */; };
 		DB76A1E91EE423DE00125B09 /* EnumEnumerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76A1E81EE423DE00125B09 /* EnumEnumerable.swift */; };
+		DB76A1EB1EE431E500125B09 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76A1EA1EE431E500125B09 /* UIColor+Hex.swift */; };
 		DB9F09051ED6F23500F3A263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F09041ED6F23500F3A263 /* AppDelegate.swift */; };
 		DB9F09071ED6F23500F3A263 /* SelectRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F09061ED6F23500F3A263 /* SelectRoomViewController.swift */; };
 		DB9F090A1ED6F23500F3A263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9F09081ED6F23500F3A263 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		DB3E21111EE4048600F7CC24 /* RoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		DB76A1E61EE4207A00125B09 /* RoomType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
 		DB76A1E81EE423DE00125B09 /* EnumEnumerable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumEnumerable.swift; sourceTree = "<group>"; };
+		DB76A1EA1EE431E500125B09 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		DB9F09011ED6F23500F3A263 /* rensou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rensou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9F09041ED6F23500F3A263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB9F09061ED6F23500F3A263 /* SelectRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB76A1EC1EE4371200125B09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DB76A1EA1EE431E500125B09 /* UIColor+Hex.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		DB9F08F81ED6F23500F3A263 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		DB9F09031ED6F23500F3A263 /* rensou */ = {
 			isa = PBXGroup;
 			children = (
+				DB76A1EC1EE4371200125B09 /* Extensions */,
 				DB9F09041ED6F23500F3A263 /* AppDelegate.swift */,
 				DB9F09061ED6F23500F3A263 /* SelectRoomViewController.swift */,
 				DB9F09081ED6F23500F3A263 /* Main.storyboard */,
@@ -272,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB9F09071ED6F23500F3A263 /* SelectRoomViewController.swift in Sources */,
+				DB76A1EB1EE431E500125B09 /* UIColor+Hex.swift in Sources */,
 				DB9F09051ED6F23500F3A263 /* AppDelegate.swift in Sources */,
 				DB76A1E71EE4207A00125B09 /* RoomType.swift in Sources */,
 				DB76A1E91EE423DE00125B09 /* EnumEnumerable.swift in Sources */,
