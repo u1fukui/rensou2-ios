@@ -84,20 +84,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqn-WO-BS1">
-                                <rect key="frame" x="126" y="184" width="69" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="question_theme_bg" translatesAutoresizingMaskIntoConstraints="NO" id="WsB-r8-Wwo">
+                                <rect key="frame" x="0.0" y="64" width="320" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="9ax-g1-Do9"/>
+                                    <constraint firstAttribute="height" constant="240" id="BYi-Ws-JZe"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0s-vH-bhc">
+                                <rect key="frame" x="0.0" y="64" width="320" height="240"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question_theme_suffix" translatesAutoresizingMaskIntoConstraints="NO" id="OdY-7B-h1Z">
+                                        <rect key="frame" x="159" y="158" width="95" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="連想テーマ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqn-WO-BS1">
+                                        <rect key="frame" x="45" y="80" width="170" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="dbT-yN-JAT"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="ey7-ca-oll"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="jks-4O-X8f"/>
+                                    <constraint firstAttribute="width" constant="320" id="rNe-9x-Q65"/>
+                                    <constraint firstItem="lqn-WO-BS1" firstAttribute="top" secondItem="P0s-vH-bhc" secondAttribute="top" constant="80" id="rPy-ah-PLT"/>
+                                    <constraint firstItem="lqn-WO-BS1" firstAttribute="leading" secondItem="P0s-vH-bhc" secondAttribute="leading" constant="45" id="zgO-zu-Zz7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P0s-vH-bhc" firstAttribute="centerX" secondItem="cgH-tj-s8a" secondAttribute="centerX" id="1Jf-I6-ZJF"/>
+                            <constraint firstItem="WsB-r8-Wwo" firstAttribute="centerX" secondItem="cgH-tj-s8a" secondAttribute="centerX" id="6QO-cq-p0S"/>
+                            <constraint firstItem="WsB-r8-Wwo" firstAttribute="top" secondItem="spN-df-U1f" secondAttribute="bottom" id="AlD-Ut-X4u"/>
+                            <constraint firstItem="P0s-vH-bhc" firstAttribute="top" secondItem="spN-df-U1f" secondAttribute="bottom" id="ZMG-GT-nFp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="themeLabel" destination="lqn-WO-BS1" id="oGE-dt-7O9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YP7-GE-sAJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866" y="-131"/>
+            <point key="canvasLocation" x="864.375" y="-132.04225352112675"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jte-jB-ff3">
@@ -116,4 +151,8 @@
             <point key="canvasLocation" x="-791" y="-141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="question_theme_bg" width="320" height="240"/>
+        <image name="question_theme_suffix" width="95" height="36"/>
+    </resources>
 </document>

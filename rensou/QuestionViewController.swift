@@ -9,11 +9,12 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
+ 
+    @IBOutlet weak var themeLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        themeLabel.text = "バナナ"
     }
 
     override func didReceiveMemoryWarning() {
