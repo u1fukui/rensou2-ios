@@ -9,17 +9,6 @@
 import UIKit
 
 class SelectRoomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    enum RoomType {
-        case STUDENT
-        case ADULT
-        case GIRL
-        case OTAKU
-        case SECRET
-        case _count
-        
-        static let count = _count.hashValue
-    }
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,7 +28,10 @@ class SelectRoomViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "roomCell", for: indexPath) as! RoomCell
-        cell.roomImageView?.image = UIImage(named: "room_student")
+        
+        let room = RoomType.cases[indexPath.row]
+        cell.roomImageView?.image = UIImage(named: room.imageName())
+        
         return cell
     }
 }
