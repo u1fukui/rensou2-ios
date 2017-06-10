@@ -12,6 +12,8 @@ class SelectRoomViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var tableView: UITableView!
     
+    var selectedRoomType: RoomType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,10 +40,20 @@ class SelectRoomViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "roomCell", for: indexPath) as! RoomCell
         
-        let room = RoomType.cases[indexPath.row]
-        cell.roomImageView?.image = UIImage(named: room.imageName())
+        let roomType = RoomType.cases[indexPath.row]
+        cell.roomImageView?.image = UIImage(named: roomType.imageName())
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRoomType = RoomType.cases[indexPath.row]
+        performSegue(withIdentifier: "selectRoom",sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination  as! QuestionViewController
+        viewController.roomType = selectedRoomType
     }
 }
 

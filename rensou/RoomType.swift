@@ -29,4 +29,34 @@ enum RoomType: EnumEnumerable {
             return "room_secret"
         }
     }
+    
+    func primaryColor() -> String {
+        switch self {
+        case .STUDENT:
+            return "00adef"
+        case .ADULT:
+            return "23ac0e"
+        case .GIRL:
+            return "f40783"
+        case .OTAKU:
+            return "ffaa00"
+        case .SECRET:
+            return "894891"
+        }
+    }
+    
+    func backgroundColor() -> String {
+        switch self {
+        case .STUDENT:
+            return "9ed7e2"
+        case .ADULT:
+            return "a6e39d"
+        case .GIRL:
+            return "ffcce5"
+        case .OTAKU:
+            return "fff2b2"
+        case .SECRET:
+            return "e5b2ff"
+        }
+    }
 }

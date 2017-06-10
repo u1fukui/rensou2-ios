@@ -51,7 +51,6 @@
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="roomImageView" destination="a79-qy-yJ4" id="6fE-Mz-ZCs"/>
-                                            <segue destination="lSw-HF-FWE" kind="show" id="mC0-c8-SMw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -66,6 +65,7 @@
                     <navigationItem key="navigationItem" id="EEn-a2-TfN"/>
                     <connections>
                         <outlet property="tableView" destination="SuY-Eb-NXx" id="7zb-8a-Zgc"/>
+                        <segue destination="lSw-HF-FWE" kind="show" identifier="selectRoom" id="1GO-y4-oYu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xS0-Xr-i8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -117,6 +117,24 @@
                                     <constraint firstItem="lqn-WO-BS1" firstAttribute="leading" secondItem="P0s-vH-bhc" secondAttribute="leading" constant="45" id="zgO-zu-Zz7"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-9J-G7C">
+                                <rect key="frame" x="18" y="310" width="284" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0aN-fn-RCL">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="BXA-kp-TUm"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdg-ed-2G6">
+                                        <rect key="frame" x="180" y="0.0" width="104" height="40"/>
+                                        <state key="normal" title="Button" image="question_submit_button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -124,9 +142,12 @@
                             <constraint firstItem="WsB-r8-Wwo" firstAttribute="centerX" secondItem="cgH-tj-s8a" secondAttribute="centerX" id="6QO-cq-p0S"/>
                             <constraint firstItem="WsB-r8-Wwo" firstAttribute="top" secondItem="spN-df-U1f" secondAttribute="bottom" id="AlD-Ut-X4u"/>
                             <constraint firstItem="P0s-vH-bhc" firstAttribute="top" secondItem="spN-df-U1f" secondAttribute="bottom" id="ZMG-GT-nFp"/>
+                            <constraint firstItem="DJH-9J-G7C" firstAttribute="centerX" secondItem="cgH-tj-s8a" secondAttribute="centerX" id="ad7-Hl-Xhx"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="submitButton" destination="Xdg-ed-2G6" id="Xpb-xw-our"/>
+                        <outlet property="textField" destination="0aN-fn-RCL" id="1yQ-sJ-bpi"/>
                         <outlet property="themeLabel" destination="lqn-WO-BS1" id="oGE-dt-7O9"/>
                     </connections>
                 </viewController>
@@ -152,6 +173,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="question_submit_button" width="50" height="40"/>
         <image name="question_theme_bg" width="320" height="240"/>
         <image name="question_theme_suffix" width="95" height="36"/>
     </resources>

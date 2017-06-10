@@ -12,11 +12,29 @@ class QuestionViewController: UIViewController {
  
     @IBOutlet weak var themeLabel: UILabel!
 
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var submitButton: UIButton!
+    
+    var roomType: RoomType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         themeLabel.text = "バナナ"
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let roomType = roomType {
+            let primaryColor = UIColor(hex: roomType.primaryColor())
+            self.navigationController?.navigationBar.barTintColor = primaryColor
+            self.navigationController?.navigationBar.tintColor = primaryColor
+            
+            self.view.backgroundColor = UIColor(hex: roomType.backgroundColor())
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
