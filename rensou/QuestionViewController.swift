@@ -21,6 +21,7 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         themeLabel.text = "バナナ"
+        self.navigationItem.titleView = UIImageView(image:UIImage(named:"question_title"))
     }
 
     override func viewWillAppear(_ animated: Bool) {
