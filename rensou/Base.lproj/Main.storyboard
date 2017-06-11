@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gfu-1l-WLh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gfu-1l-WLh">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -117,21 +118,23 @@
                                     <constraint firstItem="lqn-WO-BS1" firstAttribute="leading" secondItem="P0s-vH-bhc" secondAttribute="leading" constant="45" id="zgO-zu-Zz7"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-9J-G7C">
-                                <rect key="frame" x="18" y="310" width="284" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-9J-G7C">
+                                <rect key="frame" x="27.5" y="310" width="265" height="40"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0aN-fn-RCL">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="40"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0aN-fn-RCL">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="BXA-kp-TUm"/>
+                                            <constraint firstAttribute="width" constant="200" id="BXA-kp-TUm"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdg-ed-2G6">
-                                        <rect key="frame" x="180" y="0.0" width="104" height="40"/>
-                                        <state key="normal" title="Button" image="question_submit_button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdg-ed-2G6">
+                                        <rect key="frame" x="215" y="0.0" width="50" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="question_submit_button"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -141,6 +144,7 @@
                             <constraint firstItem="P0s-vH-bhc" firstAttribute="centerX" secondItem="cgH-tj-s8a" secondAttribute="centerX" id="1Jf-I6-ZJF"/>
                             <constraint firstItem="WsB-r8-Wwo" firstAttribute="centerX" secondItem="cgH-tj-s8a" secondAttribute="centerX" id="6QO-cq-p0S"/>
                             <constraint firstItem="WsB-r8-Wwo" firstAttribute="top" secondItem="spN-df-U1f" secondAttribute="bottom" id="AlD-Ut-X4u"/>
+                            <constraint firstItem="DJH-9J-G7C" firstAttribute="top" secondItem="cgH-tj-s8a" secondAttribute="topMargin" constant="310" id="TRd-aJ-8aR"/>
                             <constraint firstItem="P0s-vH-bhc" firstAttribute="top" secondItem="spN-df-U1f" secondAttribute="bottom" id="ZMG-GT-nFp"/>
                             <constraint firstItem="DJH-9J-G7C" firstAttribute="centerX" secondItem="cgH-tj-s8a" secondAttribute="centerX" id="ad7-Hl-Xhx"/>
                         </constraints>

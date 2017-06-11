@@ -33,6 +33,8 @@ class QuestionViewController: UIViewController {
             self.navigationController?.navigationBar.tintColor = primaryColor
             
             self.view.backgroundColor = UIColor(hex: roomType.backgroundColor())
+            
+            submitButton.backgroundColor = UIColor(hex: roomType.primaryColor())
         }
     }
     
