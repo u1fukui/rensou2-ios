@@ -28,30 +28,67 @@ class QuestionViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if let roomType = roomType {
-            let primaryColor = UIColor(hex: roomType.primaryColor())
-            self.navigationController?.navigationBar.barTintColor = primaryColor
-            self.navigationController?.navigationBar.tintColor = primaryColor
-            
-            self.view.backgroundColor = UIColor(hex: roomType.backgroundColor())
-            
-            submitButton.backgroundColor = UIColor(hex: roomType.primaryColor())
+            initRoomTypeTheme(roomType)
         }
+        addKeyboardObserver()
+    }
+    
+    func initRoomTypeTheme(_ roomType: RoomType) {
+        let primaryColor = UIColor(hex: roomType.primaryColor())
+        self.navigationController?.navigationBar.barTintColor = primaryColor
+        self.navigationController?.navigationBar.tintColor = primaryColor
+        
+        self.view.backgroundColor = UIColor(hex: roomType.backgroundColor())
+        
+        submitButton.backgroundColor = UIColor(hex: roomType.primaryColor())
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        removeKeyboardObserver()
+        super.viewWillDisappear(animated)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    // MARK: - Keyboard detection
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func addKeyboardObserver() {
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notification.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
-    */
-
+    
+    func removeKeyboardObserver() {
+        let notification = NotificationCenter.default
+        notification.removeObserver(self)
+    }
+    
+    func keyboardWillShow(notification: Notification?) {
+        let rect = (notification?.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        
+        let superView = textField.superview
+        if let superView = superView {
+            let margin: CGFloat = 10.0
+            let convertedFrame = superView.convert(textField.frame, to: self.view)
+            let diff = (self.view.frame.height - (rect?.height)!) - (convertedFrame.maxY + margin)
+            
+            if diff < 0 {
+                let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double
+                UIView.animate(withDuration: duration!, animations: { () in
+                    let transform = CGAffineTransform(translationX: 0, y: diff)
+                    self.view.transform = transform
+                })
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: Notification?) {
+        let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? Double
+        UIView.animate(withDuration: duration!, animations: { () in
+            self.view.transform = CGAffineTransform.identity
+        })
+    }
 }
