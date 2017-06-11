@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let image = UIImage(named: "navigation_back")
+        if let image = image {
+            let backImage = image.withRenderingMode(.alwaysOriginal).resizableImage(withCapInsets: UIEdgeInsetsMake(image.size.height, image.size.width, 0, 0))
+            UIBarButtonItem.appearance().setBackButtonBackgroundImage(backImage, for: .normal, barMetrics: .default)
+            UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-400, 0), for: .default)
+        }
         return true
     }
 
