@@ -53,6 +53,11 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func onClickSubmitButton(_ sender: Any) {
+        performSegue(withIdentifier: "submitRensou",sender: nil)
+    }
+    
     // MARK: - Keyboard detection
     
     func addKeyboardObserver() {
