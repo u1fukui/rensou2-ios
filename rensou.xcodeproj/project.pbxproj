@@ -43,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02A6C3FD50C9D77682A3B9FF /* Pods-rensouTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensouTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rensouTests/Pods-rensouTests.release.xcconfig"; sourceTree = "<group>"; };
+		07963679FB4B3E2A274843C9 /* Pods_rensouUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rensouUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1562D05FC1F9B24426DF1E0C /* Pods_rensouTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rensouTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		193EA251100158390653C38D /* Pods_rensou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rensou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61C4DCE39D2F494AF7FF9B2A /* Pods-rensouTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensouTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rensouTests/Pods-rensouTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6F4E282EE9999A319449E1DD /* Pods-rensou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rensou/Pods-rensou.debug.xcconfig"; sourceTree = "<group>"; };
+		9D65FC8154DEB366FC061C75 /* Pods-rensou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensou.release.xcconfig"; path = "Pods/Target Support Files/Pods-rensou/Pods-rensou.release.xcconfig"; sourceTree = "<group>"; };
+		C6DE68A412D37A4188F41860 /* Pods-rensouUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensouUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rensouUITests/Pods-rensouUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB206E541EF2CDA100392576 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		DB3E210F1EE3D57000F7CC24 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		DB3E21111EE4048600F7CC24 /* RoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		DB76A1E61EE4207A00125B09 /* RoomType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
@@ -61,6 +70,7 @@
 		DB9F09201ED6F23600F3A263 /* rensouUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rensouUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9F09241ED6F23600F3A263 /* rensouUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rensouUITests.swift; sourceTree = "<group>"; };
 		DB9F09261ED6F23600F3A263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3055DA17A215869B67F6CE4 /* Pods-rensouUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensouUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rensouUITests/Pods-rensouUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6EAD288407AAEB00D465366 /* Pods_rensou.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7583A87823BAF60D4AE5779 /* Pods_rensouTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +94,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F80EC1BE970F24EC7CD0FFF /* Pods_rensouUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54A3A546F91322D18F22BD95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F4E282EE9999A319449E1DD /* Pods-rensou.debug.xcconfig */,
+				9D65FC8154DEB366FC061C75 /* Pods-rensou.release.xcconfig */,
+				61C4DCE39D2F494AF7FF9B2A /* Pods-rensouTests.debug.xcconfig */,
+				02A6C3FD50C9D77682A3B9FF /* Pods-rensouTests.release.xcconfig */,
+				C6DE68A412D37A4188F41860 /* Pods-rensouUITests.debug.xcconfig */,
+				F3055DA17A215869B67F6CE4 /* Pods-rensouUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		96424BFE1A8043C9F01C9428 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				193EA251100158390653C38D /* Pods_rensou.framework */,
+				1562D05FC1F9B24426DF1E0C /* Pods_rensouTests.framework */,
+				07963679FB4B3E2A274843C9 /* Pods_rensouUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DB76A1EC1EE4371200125B09 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +139,8 @@
 				DB9F09181ED6F23600F3A263 /* rensouTests */,
 				DB9F09231ED6F23600F3A263 /* rensouUITests */,
 				DB9F09021ED6F23500F3A263 /* Products */,
+				54A3A546F91322D18F22BD95 /* Pods */,
+				96424BFE1A8043C9F01C9428 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB9F09291ED6F23600F3A263 /* Build configuration list for PBXNativeTarget "rensou" */;
 			buildPhases = (
+				9BF560079820C40381FC84E4 /* [CP] Check Pods Manifest.lock */,
 				DB9F08FD1ED6F23500F3A263 /* Sources */,
 				DB9F08FE1ED6F23500F3A263 /* Frameworks */,
 				DB9F08FF1ED6F23500F3A263 /* Resources */,
+				B9F32BF533925CA07A53A403 /* [CP] Embed Pods Frameworks */,
+				DF82567726689D1BA210ECB4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,9 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB9F092C1ED6F23600F3A263 /* Build configuration list for PBXNativeTarget "rensouTests" */;
 			buildPhases = (
+				8A570316531A34EE8696C699 /* [CP] Check Pods Manifest.lock */,
 				DB9F09111ED6F23500F3A263 /* Sources */,
 				DB9F09121ED6F23500F3A263 /* Frameworks */,
 				DB9F09131ED6F23500F3A263 /* Resources */,
+				A4440FFDE67661EB81928CA1 /* [CP] Embed Pods Frameworks */,
+				5BEE58EEEB6EBD74710CDC22 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,9 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB9F092F1ED6F23600F3A263 /* Build configuration list for PBXNativeTarget "rensouUITests" */;
 			buildPhases = (
+				5FB6BF866834FCEB0197F4B6 /* [CP] Check Pods Manifest.lock */,
 				DB9F091C1ED6F23600F3A263 /* Sources */,
 				DB9F091D1ED6F23600F3A263 /* Frameworks */,
 				DB9F091E1ED6F23600F3A263 /* Resources */,
+				1F402E9E6C90134D5EC73047 /* [CP] Embed Pods Frameworks */,
+				32F0FDDB00D5A4F5AFD9FB70 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,6 +268,7 @@
 				TargetAttributes = {
 					DB9F09001ED6F23500F3A263 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 36XBSC9G66;
 						ProvisioningStyle = Automatic;
 					};
 					DB9F09141ED6F23500F3A263 = {
@@ -281,6 +329,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F402E9E6C90134D5EC73047 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rensouUITests/Pods-rensouUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32F0FDDB00D5A4F5AFD9FB70 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rensouUITests/Pods-rensouUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BEE58EEEB6EBD74710CDC22 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rensouTests/Pods-rensouTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FB6BF866834FCEB0197F4B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8A570316531A34EE8696C699 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9BF560079820C40381FC84E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A4440FFDE67661EB81928CA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rensouTests/Pods-rensouTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9F32BF533925CA07A53A403 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rensou/Pods-rensou-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF82567726689D1BA210ECB4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rensou/Pods-rensou-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB9F08FD1ED6F23500F3A263 /* Sources */ = {
@@ -446,8 +632,10 @@
 		};
 		DB9F092A1ED6F23600F3A263 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F4E282EE9999A319449E1DD /* Pods-rensou.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 36XBSC9G66;
 				INFOPLIST_FILE = rensou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.u1fukui.rensou;
@@ -458,8 +646,10 @@
 		};
 		DB9F092B1ED6F23600F3A263 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D65FC8154DEB366FC061C75 /* Pods-rensou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 36XBSC9G66;
 				INFOPLIST_FILE = rensou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.u1fukui.rensou;
@@ -470,6 +660,7 @@
 		};
 		DB9F092D1ED6F23600F3A263 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61C4DCE39D2F494AF7FF9B2A /* Pods-rensouTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +675,7 @@
 		};
 		DB9F092E1ED6F23600F3A263 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A6C3FD50C9D77682A3B9FF /* Pods-rensouTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +690,7 @@
 		};
 		DB9F09301ED6F23600F3A263 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6DE68A412D37A4188F41860 /* Pods-rensouUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = rensouUITests/Info.plist;
@@ -511,6 +704,7 @@
 		};
 		DB9F09311ED6F23600F3A263 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3055DA17A215869B67F6CE4 /* Pods-rensouUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = rensouUITests/Info.plist;
