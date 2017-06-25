@@ -7,22 +7,42 @@
 //
 
 import UIKit
+import Firebase
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
+    let configPlistDectionary: NSDictionary?
+    
+    override init() {
+        let path = Bundle.main.path(forResource: "Config", ofType: "plist")
+        configPlistDectionary = NSDictionary(contentsOfFile:path!)
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        initNavigationBackButton()
+        initGad()
+        return true
+    }
+    
+    func initNavigationBackButton() {
         let image = UIImage(named: "navigation_back")
         if let image = image {
             let backImage = image.withRenderingMode(.alwaysOriginal).resizableImage(withCapInsets: UIEdgeInsetsMake(image.size.height, image.size.width, 0, 0))
             UIBarButtonItem.appearance().setBackButtonBackgroundImage(backImage, for: .normal, barMetrics: .default)
             UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-400, 0), for: .default)
         }
-        return true
+    }
+    
+    func initGad() {
+        FirebaseApp.configure()
+        
+        let appId = getConfigValue(key: "AD_APPLICATION_ID") as! String
+        GADMobileAds.configure(withApplicationID: appId)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -47,6 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func getConfigValue(key: String) -> Any? {
+        return configPlistDectionary?.value(forKey: key)
+    }
 }
 

@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class SelectRoomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var gadBannerView: GADBannerView!
     
     var selectedRoomType: RoomType?
     
@@ -18,6 +21,20 @@ class SelectRoomViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"select_room_title"))
+        initBannerView();
+    }
+    
+    func initBannerView() {
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        gadBannerView.adUnitID = appDelegate.getConfigValue(key: "AD_UNIT_ID_FOR_BANNER") as? String
+        gadBannerView.rootViewController = self
+
+        
+        let request = GADRequest()
+        if TARGET_OS_SIMULATOR == 1 {
+            request.testDevices = [kGADSimulatorID]
+        }
+        gadBannerView.load(request)
     }
 
     override func viewWillAppear(_ animated: Bool) {

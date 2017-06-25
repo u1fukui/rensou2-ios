@@ -65,3 +65,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+# secret config file
+rensou/Config.plist
+GoogleService-info.plist

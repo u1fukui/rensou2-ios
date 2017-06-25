@@ -22,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SuY-Eb-NXx">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SuY-Eb-NXx">
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -60,11 +59,28 @@
                                     <outlet property="delegate" destination="eKO-XR-SxJ" id="puQ-ii-rX9"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEV-TX-3Rs" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="8Ce-AR-8m6"/>
+                                    <constraint firstAttribute="height" constant="50" id="oDJ-4u-MJ2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ThZ-SY-Obi" firstAttribute="top" secondItem="YEV-TX-3Rs" secondAttribute="bottom" id="2m3-ot-Bf1"/>
+                            <constraint firstItem="ThZ-SY-Obi" firstAttribute="top" secondItem="SuY-Eb-NXx" secondAttribute="bottom" constant="50" id="Aeg-MS-Hin"/>
+                            <constraint firstItem="SuY-Eb-NXx" firstAttribute="top" secondItem="kLU-1w-o91" secondAttribute="bottom" id="KUv-Nh-eyx"/>
+                            <constraint firstItem="YEV-TX-3Rs" firstAttribute="centerX" secondItem="t1h-WU-i0R" secondAttribute="centerX" id="PId-Df-WtR"/>
+                            <constraint firstAttribute="trailing" secondItem="SuY-Eb-NXx" secondAttribute="trailing" id="ctf-al-a8E"/>
+                            <constraint firstItem="SuY-Eb-NXx" firstAttribute="leading" secondItem="t1h-WU-i0R" secondAttribute="leading" id="wZH-ng-hDh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EEn-a2-TfN"/>
                     <connections>
+                        <outlet property="gadBannerView" destination="YEV-TX-3Rs" id="1Em-7P-z4D"/>
                         <outlet property="tableView" destination="SuY-Eb-NXx" id="7zb-8a-Zgc"/>
                         <segue destination="lSw-HF-FWE" kind="show" identifier="selectRoom" id="1GO-y4-oYu"/>
                     </connections>
