@@ -134,11 +134,19 @@
                                     <constraint firstItem="lqn-WO-BS1" firstAttribute="leading" secondItem="P0s-vH-bhc" secondAttribute="leading" constant="45" id="zgO-zu-Zz7"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-9J-G7C">
-                                <rect key="frame" x="27.5" y="310" width="265" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-Qe-had" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="q7u-pX-Ygp"/>
+                                    <constraint firstAttribute="width" constant="320" id="xDv-Dk-k14"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-9J-G7C">
+                                <rect key="frame" x="28" y="312" width="265" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0aN-fn-RCL">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="BXA-kp-TUm"/>
@@ -148,7 +156,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdg-ed-2G6">
-                                        <rect key="frame" x="215" y="0.0" width="50" height="40"/>
+                                        <rect key="frame" x="215" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="question_submit_button"/>
                                         <connections>
@@ -156,6 +164,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fsG-CW-0Ph"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -166,9 +177,12 @@
                             <constraint firstItem="DJH-9J-G7C" firstAttribute="top" secondItem="cgH-tj-s8a" secondAttribute="topMargin" constant="310" id="TRd-aJ-8aR"/>
                             <constraint firstItem="P0s-vH-bhc" firstAttribute="top" secondItem="spN-df-U1f" secondAttribute="bottom" id="ZMG-GT-nFp"/>
                             <constraint firstItem="DJH-9J-G7C" firstAttribute="centerX" secondItem="cgH-tj-s8a" secondAttribute="centerX" id="ad7-Hl-Xhx"/>
+                            <constraint firstItem="5p4-Qe-had" firstAttribute="centerX" secondItem="cgH-tj-s8a" secondAttribute="centerX" id="cmY-jv-Y9R"/>
+                            <constraint firstItem="YGL-Gp-ga7" firstAttribute="top" secondItem="5p4-Qe-had" secondAttribute="bottom" id="qg0-zX-BBs"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gadBannerView" destination="5p4-Qe-had" id="x5t-32-BBG"/>
                         <outlet property="submitButton" destination="Xdg-ed-2G6" id="Xpb-xw-our"/>
                         <outlet property="textField" destination="0aN-fn-RCL" id="1yQ-sJ-bpi"/>
                         <outlet property="themeLabel" destination="lqn-WO-BS1" id="oGE-dt-7O9"/>
