@@ -25,6 +25,8 @@
 		DB9F090F1ED6F23500F3A263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9F090D1ED6F23500F3A263 /* LaunchScreen.storyboard */; };
 		DB9F091A1ED6F23600F3A263 /* rensouTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F09191ED6F23600F3A263 /* rensouTests.swift */; };
 		DB9F09251ED6F23600F3A263 /* rensouUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F09241ED6F23600F3A263 /* rensouUITests.swift */; };
+		DBC0AFCF1F120D5900773916 /* Rensou.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0AFCE1F120D5900773916 /* Rensou.swift */; };
+		DBC0AFD31F12545E00773916 /* ResultRensouCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0AFD21F12545E00773916 /* ResultRensouCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		DB9F09201ED6F23600F3A263 /* rensouUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rensouUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9F09241ED6F23600F3A263 /* rensouUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rensouUITests.swift; sourceTree = "<group>"; };
 		DB9F09261ED6F23600F3A263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBC0AFCE1F120D5900773916 /* Rensou.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rensou.swift; sourceTree = "<group>"; };
+		DBC0AFD21F12545E00773916 /* ResultRensouCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultRensouCell.swift; sourceTree = "<group>"; };
 		F3055DA17A215869B67F6CE4 /* Pods-rensouUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensouUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rensouUITests/Pods-rensouUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +181,8 @@
 				DB76A1E81EE423DE00125B09 /* EnumEnumerable.swift */,
 				DB206E581EFFD98500392576 /* GoogleService-Info.plist */,
 				DB206E5C1EFFEE1000392576 /* Config.plist */,
+				DBC0AFCE1F120D5900773916 /* Rensou.swift */,
+				DBC0AFD21F12545E00773916 /* ResultRensouCell.swift */,
 			);
 			path = rensou;
 			sourceTree = "<group>";
@@ -489,7 +495,9 @@
 				DB206E551EF2CDA100392576 /* ResultViewController.swift in Sources */,
 				DB76A1E71EE4207A00125B09 /* RoomType.swift in Sources */,
 				DB76A1E91EE423DE00125B09 /* EnumEnumerable.swift in Sources */,
+				DBC0AFCF1F120D5900773916 /* Rensou.swift in Sources */,
 				DB3E21121EE4048600F7CC24 /* RoomCell.swift in Sources */,
+				DBC0AFD31F12545E00773916 /* ResultRensouCell.swift in Sources */,
 				DB3E21101EE3D57000F7CC24 /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

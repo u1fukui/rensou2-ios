@@ -9,13 +9,16 @@
 import UIKit
 import GoogleMobileAds
 
-class ResultViewController: UIViewController {
+class ResultViewController: UIViewController, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var gadBannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initBannerView()
+        initTableView()
     }
 
     func initBannerView() {
@@ -29,6 +32,11 @@ class ResultViewController: UIViewController {
             request.testDevices = [kGADSimulatorID]
         }
         gadBannerView.load(request)
+    }
+    
+    func initTableView() {
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,4 +55,21 @@ class ResultViewController: UIViewController {
     }
     */
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultRensouCell", for: indexPath) as! ResultRensouCell
+        
+        if (indexPath.row % 2 == 0) {
+            cell.setLeftStyle()
+        } else {
+            cell.setRightStyle()
+        }
+        
+        cell.setRensou(rensou: Rensou.init())
+        
+        return cell
+    }
 }
