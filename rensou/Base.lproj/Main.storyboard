@@ -142,8 +142,8 @@
                                     <constraint firstAttribute="width" constant="320" id="xDv-Dk-k14"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-9J-G7C">
-                                <rect key="frame" x="28" y="312" width="265" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-9J-G7C">
+                                <rect key="frame" x="28" y="310" width="265" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0aN-fn-RCL">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
@@ -205,14 +205,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oZb-Mi-w8Q">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="526"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oZb-Mi-w8Q">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2L-Cb-c4b" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="7kj-Ox-lOB"/>
+                                    <constraint firstAttribute="height" constant="50" id="RnT-JN-v1s"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w2L-Cb-c4b" firstAttribute="centerX" secondItem="vwe-My-xu7" secondAttribute="centerX" id="0Vd-yS-DuM"/>
+                            <constraint firstItem="sF3-80-oP7" firstAttribute="top" secondItem="w2L-Cb-c4b" secondAttribute="bottom" id="LLa-pB-fFl"/>
+                            <constraint firstItem="sF3-80-oP7" firstAttribute="top" secondItem="oZb-Mi-w8Q" secondAttribute="bottom" constant="50" id="cr8-lC-l4U"/>
+                            <constraint firstItem="oZb-Mi-w8Q" firstAttribute="top" secondItem="vwe-My-xu7" secondAttribute="top" id="ihg-sX-tpC"/>
+                            <constraint firstAttribute="trailing" secondItem="oZb-Mi-w8Q" secondAttribute="trailing" id="iqP-vZ-hQ0"/>
+                            <constraint firstItem="oZb-Mi-w8Q" firstAttribute="leading" secondItem="vwe-My-xu7" secondAttribute="leading" id="uQV-EB-iDr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gadBannerView" destination="w2L-Cb-c4b" id="tRT-en-uXu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y07-Fl-Cib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
