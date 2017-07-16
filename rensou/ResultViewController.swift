@@ -24,6 +24,9 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     
     func initNavigationBar() {
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"result_title"))
+        
+        let image = UIImage(named: "navigation_ranking")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.plain, target: self, action: #selector(ResultViewController.tapRankingButton))
     }
 
     func initBannerView() {
@@ -49,7 +52,12 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func tapRankingButton() {
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "ranking")
+        self.navigationController?.pushViewController(nextView, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

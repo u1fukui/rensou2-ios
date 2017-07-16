@@ -318,6 +318,24 @@
             </objects>
             <point key="canvasLocation" x="1627.5" y="-132.04225352112675"/>
         </scene>
+        <!--Ranking View Controller-->
+        <scene sceneID="Cib-MC-wy2">
+            <objects>
+                <viewController storyboardIdentifier="ranking" id="Nb9-fs-rZc" customClass="RankingViewController" customModule="rensou" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f2G-JV-Iw8"/>
+                        <viewControllerLayoutGuide type="bottom" id="cR5-AY-fwP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K3g-3K-9A9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nta-ba-cLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2488" y="-132"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jte-jB-ff3">
             <objects>
