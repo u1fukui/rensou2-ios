@@ -32,9 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initNavigationBackButton() {
         let image = UIImage(named: "navigation_back")
         if let image = image {
-            let backImage = image.withRenderingMode(.alwaysOriginal).resizableImage(withCapInsets: UIEdgeInsetsMake(image.size.height, image.size.width, 0, 0))
-            UIBarButtonItem.appearance().setBackButtonBackgroundImage(backImage, for: .normal, barMetrics: .default)
-            UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-400, 0), for: .default)
+            UINavigationBar.appearance().backIndicatorImage = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+            UINavigationBar.appearance().backIndicatorTransitionMaskImage = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         }
     }
     
