@@ -17,8 +17,13 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initNavigationBar()
         initBannerView()
         initTableView()
+    }
+    
+    func initNavigationBar() {
+        self.navigationItem.titleView = UIImageView(image:UIImage(named:"result_title"))
     }
 
     func initBannerView() {
