@@ -22,6 +22,8 @@ class ResultRensouCell: UITableViewCell {
     
     @IBOutlet weak var likeCountLabel: UILabel!
     
+    @IBOutlet weak var containerViewLeadingConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -38,10 +40,12 @@ class ResultRensouCell: UITableViewCell {
     
     func setLeftStyle() {
         bgView?.image = UIImage(named: "result_rensou_cell_bg1")
+        containerViewLeadingConstraint.constant = 0;
     }
     
     func setRightStyle() {
         bgView?.image = UIImage(named: "result_rensou_cell_bg2")
+        containerViewLeadingConstraint.constant = 14;
     }
 
     func setRensou(rensou: Rensou) {
