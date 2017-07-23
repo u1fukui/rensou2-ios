@@ -15,6 +15,7 @@
 		DB206E5D1EFFEE1000392576 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB206E5C1EFFEE1000392576 /* Config.plist */; };
 		DB22F5B11F1B5781005BBC12 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22F5B01F1B5781005BBC12 /* RankingViewController.swift */; };
 		DB22F5B31F1BA564005BBC12 /* RankingRensouCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22F5B21F1BA564005BBC12 /* RankingRensouCell.swift */; };
+		DB2AA73B1F24EE2D00D359EE /* RensouUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2AA73A1F24EE2D00D359EE /* RensouUtil.swift */; };
 		DB3E21101EE3D57000F7CC24 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E210F1EE3D57000F7CC24 /* QuestionViewController.swift */; };
 		DB3E21121EE4048600F7CC24 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E21111EE4048600F7CC24 /* RoomCell.swift */; };
 		DB76A1E71EE4207A00125B09 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76A1E61EE4207A00125B09 /* RoomType.swift */; };
@@ -63,6 +64,7 @@
 		DB206E5C1EFFEE1000392576 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		DB22F5B01F1B5781005BBC12 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		DB22F5B21F1BA564005BBC12 /* RankingRensouCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingRensouCell.swift; sourceTree = "<group>"; };
+		DB2AA73A1F24EE2D00D359EE /* RensouUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RensouUtil.swift; sourceTree = "<group>"; };
 		DB3E210F1EE3D57000F7CC24 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		DB3E21111EE4048600F7CC24 /* RoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		DB76A1E61EE4207A00125B09 /* RoomType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				DBC0AFD21F12545E00773916 /* ResultRensouCell.swift */,
 				DB22F5B01F1B5781005BBC12 /* RankingViewController.swift */,
 				DB22F5B21F1BA564005BBC12 /* RankingRensouCell.swift */,
+				DB2AA73A1F24EE2D00D359EE /* RensouUtil.swift */,
 			);
 			path = rensou;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				DB206E551EF2CDA100392576 /* ResultViewController.swift in Sources */,
 				DB22F5B31F1BA564005BBC12 /* RankingRensouCell.swift in Sources */,
 				DB76A1E71EE4207A00125B09 /* RoomType.swift in Sources */,
+				DB2AA73B1F24EE2D00D359EE /* RensouUtil.swift in Sources */,
 				DB76A1E91EE423DE00125B09 /* EnumEnumerable.swift in Sources */,
 				DBC0AFCF1F120D5900773916 /* Rensou.swift in Sources */,
 				DB3E21121EE4048600F7CC24 /* RoomCell.swift in Sources */,

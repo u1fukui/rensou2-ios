@@ -81,7 +81,10 @@ class ResultViewController: UIViewController, UITableViewDataSource {
             cell.setRightStyle()
         }
         
-        cell.setRensou(rensou: Rensou.init())
+        var rensou = Rensou.init()
+        rensou.oldKeyword = "バナナ"
+        rensou.keyword = "きいろ"
+        cell.setRensou(rensou: rensou)
         
         return cell
     }

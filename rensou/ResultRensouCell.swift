@@ -49,6 +49,6 @@ class ResultRensouCell: UITableViewCell {
     }
 
     func setRensou(rensou: Rensou) {
-        rensouLabel.text = "あいうえおかきくけこ"
+        rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
     }
 }

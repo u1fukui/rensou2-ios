@@ -25,5 +25,6 @@ class RankingRensouCell: UITableViewCell {
 
     func setRensou(rensou: Rensou, rank: Int) {
         rankIcon.image = UIImage(named: "rank" + rank.description + "_icon")
+        rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
     }
 }
