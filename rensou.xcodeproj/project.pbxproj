@@ -140,6 +140,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DB139A581F2DC08E00155291 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DBC0AFCE1F120D5900773916 /* Rensou.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		DB76A1EC1EE4371200125B09 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +181,7 @@
 		DB9F09031ED6F23500F3A263 /* rensou */ = {
 			isa = PBXGroup;
 			children = (
+				DB139A581F2DC08E00155291 /* model */,
 				DB76A1EC1EE4371200125B09 /* Extensions */,
 				DB9F09041ED6F23500F3A263 /* AppDelegate.swift */,
 				DB9F090B1ED6F23500F3A263 /* Assets.xcassets */,
@@ -185,7 +194,6 @@
 				DB3E21111EE4048600F7CC24 /* RoomCell.swift */,
 				DB76A1E61EE4207A00125B09 /* RoomType.swift */,
 				DB76A1E81EE423DE00125B09 /* EnumEnumerable.swift */,
-				DBC0AFCE1F120D5900773916 /* Rensou.swift */,
 				DB3E210F1EE3D57000F7CC24 /* QuestionViewController.swift */,
 				DB206E541EF2CDA100392576 /* ResultViewController.swift */,
 				DBC0AFD21F12545E00773916 /* ResultRensouCell.swift */,
