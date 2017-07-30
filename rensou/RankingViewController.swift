@@ -56,11 +56,11 @@ class RankingViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rankingRensouCell", for: indexPath) as! RankingRensouCell
         
-        let rensou = Rensou.init()
-        rensou.likeCount = 100
-        rensou.oldKeyword = "ばなな"
-        rensou.keyword = "きいろ"
-        cell.setRensou(rensou: rensou, rank: indexPath.row + 1)
+//        let rensou = Rensou.init()
+//        rensou.likeCount = 100
+//        rensou.oldKeyword = "ばなな"
+//        rensou.keyword = "きいろ"
+//        cell.setRensou(rensou: rensou, rank: indexPath.row + 1)
         
         return cell
     }

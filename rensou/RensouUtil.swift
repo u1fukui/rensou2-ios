@@ -13,8 +13,8 @@ class RensouUtil {
     class func makeRensouAtributtedString(_ rensou: Rensou) -> NSAttributedString {
         let output = NSMutableAttributedString.init()
         
-        let oldRensou = RensouUtil.makeRedBoldString(rensou.oldKeyword!, fontSize: 15)
-        let newRensou = RensouUtil.makeRedBoldString(rensou.keyword!, fontSize: 15)
+        let oldRensou = RensouUtil.makeRedBoldString(rensou.oldKeyword, fontSize: 15)
+        let newRensou = RensouUtil.makeRedBoldString(rensou.keyword, fontSize: 15)
         let tsunagi = RensouUtil.makeAttributedString(" といえば ", fontSize: 10)
         
         output.append(oldRensou)

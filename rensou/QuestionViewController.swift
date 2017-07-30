@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import APIKit
 
 class QuestionViewController: UIViewController {
  
@@ -23,11 +24,31 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        themeLabel.text = "バナナ"
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"question_title"))
-        
         initBannerView()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let roomType = roomType {
+            initRoomTypeTheme(roomType)
+        }
+        addKeyboardObserver()
+        fetchThemeRensou()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        removeKeyboardObserver()
+        super.viewWillDisappear(animated)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Initialization methods
     
     func initBannerView() {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -41,15 +62,6 @@ class QuestionViewController: UIViewController {
         }
         gadBannerView.load(request)
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if let roomType = roomType {
-            initRoomTypeTheme(roomType)
-        }
-        addKeyboardObserver()
-    }
     
     func initRoomTypeTheme(_ roomType: RoomType) {
         let primaryColor = UIColor(hex: roomType.primaryColor())
@@ -61,16 +73,7 @@ class QuestionViewController: UIViewController {
         submitButton.backgroundColor = UIColor(hex: roomType.primaryColor())
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        removeKeyboardObserver()
-        super.viewWillDisappear(animated)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    // MARK: - Click Event
     
     @IBAction func onClickSubmitButton(_ sender: Any) {
         performSegue(withIdentifier: "submitRensou",sender: nil)
@@ -113,5 +116,18 @@ class QuestionViewController: UIViewController {
         UIView.animate(withDuration: duration!, animations: { () in
             self.view.transform = CGAffineTransform.identity
         })
+    }
+    
+    // MARK: - API
+    
+    func fetchThemeRensou() {
+        Session.send(RensouAPI.ThemeRensou(roomType: roomType!)) { result in
+            switch result {
+            case .success(let response):
+                self.themeLabel.text = response.keyword
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

@@ -8,15 +8,22 @@
 
 import Foundation
 
-class Rensou {
-
-    var rensouId: Int?
+struct Rensou: Decodable {
+    let rensouId: Int
     
-    var likeCount: Int?
+    let likeCount: Int
     
-    var keyword: String?
+    let keyword: String
     
-    var oldKeyword: String?
+    let oldKeyword: String
     
-    var createdAt: String?
+    let createdAt: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case rensouId = "id"
+        case likeCount = "favorite"
+        case keyword
+        case oldKeyword = "old_keyword"
+        case createdAt = "created_at"
+    }
 }

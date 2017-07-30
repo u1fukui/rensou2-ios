@@ -10,6 +10,9 @@
 		1F80EC1BE970F24EC7CD0FFF /* Pods_rensouUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07963679FB4B3E2A274843C9 /* Pods_rensouUITests.framework */; };
 		B7583A87823BAF60D4AE5779 /* Pods_rensouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1562D05FC1F9B24426DF1E0C /* Pods_rensouTests.framework */; };
 		D6EAD288407AAEB00D465366 /* Pods_rensou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193EA251100158390653C38D /* Pods_rensou.framework */; };
+		DB139A5B1F2DC57D00155291 /* RensouRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB139A5A1F2DC57D00155291 /* RensouRequest.swift */; };
+		DB139A5D1F2DC9D900155291 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB139A5C1F2DC9D900155291 /* DecodableDataParser.swift */; };
+		DB139A5F1F2DCA1D00155291 /* RensouApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB139A5E1F2DCA1D00155291 /* RensouApi.swift */; };
 		DB206E551EF2CDA100392576 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB206E541EF2CDA100392576 /* ResultViewController.swift */; };
 		DB206E591EFFD98500392576 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB206E581EFFD98500392576 /* GoogleService-Info.plist */; };
 		DB206E5D1EFFEE1000392576 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB206E5C1EFFEE1000392576 /* Config.plist */; };
@@ -58,6 +61,9 @@
 		6F4E282EE9999A319449E1DD /* Pods-rensou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rensou/Pods-rensou.debug.xcconfig"; sourceTree = "<group>"; };
 		9D65FC8154DEB366FC061C75 /* Pods-rensou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensou.release.xcconfig"; path = "Pods/Target Support Files/Pods-rensou/Pods-rensou.release.xcconfig"; sourceTree = "<group>"; };
 		C6DE68A412D37A4188F41860 /* Pods-rensouUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensouUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rensouUITests/Pods-rensouUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB139A5A1F2DC57D00155291 /* RensouRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RensouRequest.swift; sourceTree = "<group>"; };
+		DB139A5C1F2DC9D900155291 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
+		DB139A5E1F2DCA1D00155291 /* RensouApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RensouApi.swift; sourceTree = "<group>"; };
 		DB206E541EF2CDA100392576 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		DB206E581EFFD98500392576 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB206E5A1EFFDAC600392576 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -143,9 +149,20 @@
 		DB139A581F2DC08E00155291 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				DB76A1E61EE4207A00125B09 /* RoomType.swift */,
 				DBC0AFCE1F120D5900773916 /* Rensou.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		DB139A591F2DC13700155291 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				DB139A5A1F2DC57D00155291 /* RensouRequest.swift */,
+				DB139A5C1F2DC9D900155291 /* DecodableDataParser.swift */,
+				DB139A5E1F2DCA1D00155291 /* RensouApi.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		DB76A1EC1EE4371200125B09 /* Extensions */ = {
@@ -181,18 +198,18 @@
 		DB9F09031ED6F23500F3A263 /* rensou */ = {
 			isa = PBXGroup;
 			children = (
+				DB139A591F2DC13700155291 /* api */,
 				DB139A581F2DC08E00155291 /* model */,
 				DB76A1EC1EE4371200125B09 /* Extensions */,
-				DB9F09041ED6F23500F3A263 /* AppDelegate.swift */,
 				DB9F090B1ED6F23500F3A263 /* Assets.xcassets */,
 				DB9F09081ED6F23500F3A263 /* Main.storyboard */,
 				DB9F090D1ED6F23500F3A263 /* LaunchScreen.storyboard */,
 				DB9F09101ED6F23500F3A263 /* Info.plist */,
 				DB206E5C1EFFEE1000392576 /* Config.plist */,
 				DB206E581EFFD98500392576 /* GoogleService-Info.plist */,
+				DB9F09041ED6F23500F3A263 /* AppDelegate.swift */,
 				DB9F09061ED6F23500F3A263 /* SelectRoomViewController.swift */,
 				DB3E21111EE4048600F7CC24 /* RoomCell.swift */,
-				DB76A1E61EE4207A00125B09 /* RoomType.swift */,
 				DB76A1E81EE423DE00125B09 /* EnumEnumerable.swift */,
 				DB3E210F1EE3D57000F7CC24 /* QuestionViewController.swift */,
 				DB206E541EF2CDA100392576 /* ResultViewController.swift */,
@@ -509,13 +526,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB139A5F1F2DCA1D00155291 /* RensouApi.swift in Sources */,
 				DB9F09071ED6F23500F3A263 /* SelectRoomViewController.swift in Sources */,
 				DB76A1EB1EE431E500125B09 /* UIColor+Hex.swift in Sources */,
 				DB9F09051ED6F23500F3A263 /* AppDelegate.swift in Sources */,
 				DB206E551EF2CDA100392576 /* ResultViewController.swift in Sources */,
 				DB22F5B31F1BA564005BBC12 /* RankingRensouCell.swift in Sources */,
 				DB76A1E71EE4207A00125B09 /* RoomType.swift in Sources */,
+				DB139A5B1F2DC57D00155291 /* RensouRequest.swift in Sources */,
 				DB2AA73B1F24EE2D00D359EE /* RensouUtil.swift in Sources */,
+				DB139A5D1F2DC9D900155291 /* DecodableDataParser.swift in Sources */,
 				DB76A1E91EE423DE00125B09 /* EnumEnumerable.swift in Sources */,
 				DBC0AFCF1F120D5900773916 /* Rensou.swift in Sources */,
 				DB3E21121EE4048600F7CC24 /* RoomCell.swift in Sources */,

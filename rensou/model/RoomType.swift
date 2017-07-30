@@ -15,6 +15,21 @@ enum RoomType: EnumEnumerable {
     case OTAKU
     case SECRET
     
+    func id() -> Int {
+        switch self {
+        case .STUDENT:
+            return 1
+        case .ADULT:
+            return 2
+        case .GIRL:
+            return 3
+        case .OTAKU:
+            return 4
+        case .SECRET:
+            return 5
+        }
+    }
+    
     func imageName() -> String {
         switch self {
         case .STUDENT:
