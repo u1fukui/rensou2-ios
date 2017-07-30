@@ -121,7 +121,7 @@ class QuestionViewController: UIViewController {
     // MARK: - API
     
     func fetchThemeRensou() {
-        Session.send(RensouAPI.ThemeRensou(roomType: roomType!)) { result in
+        Session.send(RensouAPI.GetThemeRensou(roomType: roomType!)) { result in
             switch result {
             case .success(let response):
                 self.themeLabel.text = response.keyword

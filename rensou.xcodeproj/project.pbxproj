@@ -10,6 +10,8 @@
 		1F80EC1BE970F24EC7CD0FFF /* Pods_rensouUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07963679FB4B3E2A274843C9 /* Pods_rensouUITests.framework */; };
 		B7583A87823BAF60D4AE5779 /* Pods_rensouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1562D05FC1F9B24426DF1E0C /* Pods_rensouTests.framework */; };
 		D6EAD288407AAEB00D465366 /* Pods_rensou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193EA251100158390653C38D /* Pods_rensou.framework */; };
+		DB0580A71F2E171600AF6006 /* UserRegistrationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0580A61F2E171600AF6006 /* UserRegistrationResponse.swift */; };
+		DB0580A91F2E1FA500AF6006 /* DataSaveHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0580A81F2E1FA500AF6006 /* DataSaveHelper.swift */; };
 		DB139A5B1F2DC57D00155291 /* RensouRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB139A5A1F2DC57D00155291 /* RensouRequest.swift */; };
 		DB139A5D1F2DC9D900155291 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB139A5C1F2DC9D900155291 /* DecodableDataParser.swift */; };
 		DB139A5F1F2DCA1D00155291 /* RensouApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB139A5E1F2DCA1D00155291 /* RensouApi.swift */; };
@@ -61,6 +63,8 @@
 		6F4E282EE9999A319449E1DD /* Pods-rensou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rensou/Pods-rensou.debug.xcconfig"; sourceTree = "<group>"; };
 		9D65FC8154DEB366FC061C75 /* Pods-rensou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensou.release.xcconfig"; path = "Pods/Target Support Files/Pods-rensou/Pods-rensou.release.xcconfig"; sourceTree = "<group>"; };
 		C6DE68A412D37A4188F41860 /* Pods-rensouUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rensouUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rensouUITests/Pods-rensouUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB0580A61F2E171600AF6006 /* UserRegistrationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationResponse.swift; sourceTree = "<group>"; };
+		DB0580A81F2E1FA500AF6006 /* DataSaveHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSaveHelper.swift; sourceTree = "<group>"; };
 		DB139A5A1F2DC57D00155291 /* RensouRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RensouRequest.swift; sourceTree = "<group>"; };
 		DB139A5C1F2DC9D900155291 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		DB139A5E1F2DCA1D00155291 /* RensouApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RensouApi.swift; sourceTree = "<group>"; };
@@ -146,6 +150,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DB0580AA1F2E298300AF6006 /* response */ = {
+			isa = PBXGroup;
+			children = (
+				DB0580A61F2E171600AF6006 /* UserRegistrationResponse.swift */,
+			);
+			path = response;
+			sourceTree = "<group>";
+		};
 		DB139A581F2DC08E00155291 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +170,7 @@
 		DB139A591F2DC13700155291 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				DB0580AA1F2E298300AF6006 /* response */,
 				DB139A5A1F2DC57D00155291 /* RensouRequest.swift */,
 				DB139A5C1F2DC9D900155291 /* DecodableDataParser.swift */,
 				DB139A5E1F2DCA1D00155291 /* RensouApi.swift */,
@@ -170,6 +183,7 @@
 			children = (
 				DB76A1E81EE423DE00125B09 /* EnumEnumerable.swift */,
 				DB2AA73A1F24EE2D00D359EE /* RensouUtil.swift */,
+				DB0580A81F2E1FA500AF6006 /* DataSaveHelper.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -551,6 +565,8 @@
 				DB76A1E71EE4207A00125B09 /* RoomType.swift in Sources */,
 				DB139A5B1F2DC57D00155291 /* RensouRequest.swift in Sources */,
 				DB2AA73B1F24EE2D00D359EE /* RensouUtil.swift in Sources */,
+				DB0580A71F2E171600AF6006 /* UserRegistrationResponse.swift in Sources */,
+				DB0580A91F2E1FA500AF6006 /* DataSaveHelper.swift in Sources */,
 				DB139A5D1F2DC9D900155291 /* DecodableDataParser.swift in Sources */,
 				DB76A1E91EE423DE00125B09 /* EnumEnumerable.swift in Sources */,
 				DBC0AFCF1F120D5900773916 /* Rensou.swift in Sources */,

@@ -12,7 +12,17 @@ import APIKit
 final class RensouAPI {
     private init() {}
     
-    struct ThemeRensou: RensouRequest {
+    struct RegisterUser: RensouRequest {
+        typealias Response = UserRegistrationResponse
+        
+        let method: HTTPMethod = .post
+        let path: String = "user"
+        var parameters: Any? {
+            return ["device_type": 0]
+        }
+    }
+    
+    struct GetThemeRensou: RensouRequest {
         typealias Response = Rensou
         
         let method: HTTPMethod = .get
