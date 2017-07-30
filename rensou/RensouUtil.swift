@@ -26,15 +26,15 @@ class RensouUtil {
     class func makeAttributedString(_ string: String!, fontSize: CGFloat) -> NSMutableAttributedString {
         let attributedString = NSMutableAttributedString(string: string)
         let range = (string as NSString).range(of: string)
-        attributedString.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: fontSize), range: range)
+        attributedString.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: fontSize), range: range)
         return attributedString
     }
     
     class func makeRedBoldString(_ string: String!, fontSize: CGFloat) -> NSMutableAttributedString {
         let attributedString = NSMutableAttributedString(string: string)
         let range = (string as NSString).range(of: string)
-        attributedString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: fontSize), range: range)
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: range)
+        attributedString.addAttribute(NSAttributedStringKey.font, value: UIFont.boldSystemFont(ofSize: fontSize), range: range)
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red, range: range)
         return attributedString
     }
 }

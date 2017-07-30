@@ -52,7 +52,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-    func tapRankingButton() {
+    @objc func tapRankingButton() {
         let storyboard: UIStoryboard = self.storyboard!
         let nextView = storyboard.instantiateViewController(withIdentifier: "ranking")
         self.navigationController?.pushViewController(nextView, animated: true)
@@ -81,7 +81,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
             cell.setRightStyle()
         }
         
-        var rensou = Rensou.init()
+        let rensou = Rensou.init()
         rensou.oldKeyword = "バナナ"
         rensou.keyword = "きいろ"
         cell.setRensou(rensou: rensou)

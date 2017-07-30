@@ -89,7 +89,7 @@ class QuestionViewController: UIViewController {
         notification.removeObserver(self)
     }
     
-    func keyboardWillShow(notification: Notification?) {
+    @objc func keyboardWillShow(notification: Notification?) {
         let rect = (notification?.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
         
         let superView = textField.superview
@@ -108,7 +108,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    func keyboardWillHide(notification: Notification?) {
+    @objc func keyboardWillHide(notification: Notification?) {
         let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? Double
         UIView.animate(withDuration: duration!, animations: { () in
             self.view.transform = CGAffineTransform.identity

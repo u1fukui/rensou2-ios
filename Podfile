@@ -8,15 +8,22 @@ target 'rensou' do
   # Pods for rensou
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
+  pod 'APIKit', '~> 3.1'
 
   target 'rensouTests' do
     inherit! :search_paths
     # Pods for testing
-  end
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
+    pod 'APIKit', '~> 3.1' 
+ end
 
   target 'rensouUITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
+    pod 'APIKit', '~> 3.1'
   end
 
 end
