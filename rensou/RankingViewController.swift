@@ -15,6 +15,8 @@ class RankingViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var roomType: RoomType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -61,6 +63,8 @@ class RankingViewController: UIViewController, UITableViewDataSource {
 //        rensou.oldKeyword = "ばなな"
 //        rensou.keyword = "きいろ"
 //        cell.setRensou(rensou: rensou, rank: indexPath.row + 1)
+        
+        cell.backgroundColor = UIColor(hex: roomType!.backgroundColor())
         
         return cell
     }

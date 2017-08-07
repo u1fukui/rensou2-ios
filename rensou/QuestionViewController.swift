@@ -164,6 +164,7 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let viewController = segue.destination as! ResultViewController
+        viewController.roomType = roomType
         viewController.rensous = resultRensous!
     }
 }

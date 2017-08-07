@@ -15,6 +15,8 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var gadBannerView: GADBannerView!
     
+    var roomType: RoomType?
+    
     var rensous: [Rensou]?
     
     override func viewDidLoad() {
@@ -54,21 +56,23 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Navigation
+    
     @objc func tapRankingButton() {
         let storyboard: UIStoryboard = self.storyboard!
         let nextView = storyboard.instantiateViewController(withIdentifier: "ranking")
+        if let nextView = nextView as? RankingViewController {
+            nextView.roomType = roomType
+        }
         self.navigationController?.pushViewController(nextView, animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let viewController = segue.destination as! RankingViewController
+        viewController.roomType = roomType
     }
-    */
+
+    // MARK: - UITableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if rensous == nil {
@@ -86,7 +90,8 @@ class ResultViewController: UIViewController, UITableViewDataSource {
             cell.setRightStyle()
         }
         cell.setRensou(rensous![indexPath.row])
-        
+        cell.backgroundColor = UIColor(hex: roomType!.backgroundColor())
+
         return cell
     }
 }
