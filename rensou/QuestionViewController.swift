@@ -22,6 +22,10 @@ class QuestionViewController: UIViewController {
     
     var roomType: RoomType?
     
+    var themeRensou: Rensou?
+    
+    var resultRensous: [Rensou]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"question_title"))
@@ -55,7 +59,6 @@ class QuestionViewController: UIViewController {
         gadBannerView.adUnitID = appDelegate.getConfigValue(key: "AD_UNIT_ID_FOR_BANNER") as? String
         gadBannerView.rootViewController = self
         
-        
         let request = GADRequest()
         if TARGET_OS_SIMULATOR == 1 {
             request.testDevices = [kGADSimulatorID]
@@ -76,7 +79,7 @@ class QuestionViewController: UIViewController {
     // MARK: - Click Event
     
     @IBAction func onClickSubmitButton(_ sender: Any) {
-        performSegue(withIdentifier: "submitRensou",sender: nil)
+        postRensou(keyword: textField.text!)
     }
     
     // MARK: - Keyboard detection
@@ -124,10 +127,33 @@ class QuestionViewController: UIViewController {
         Session.send(RensouAPI.GetThemeRensou(roomType: roomType!)) { result in
             switch result {
             case .success(let response):
+                self.themeRensou = response
                 self.themeLabel.text = response.keyword
             case .failure(let error):
                 print(error)
             }
         }
+    }
+    
+    func postRensou(keyword: String) {
+        let userId = DataSaveHelper.sharedInstance.loadUserId();
+        
+        Session.send(RensouAPI.PostRensouRequest(userId: userId!,
+                                                 roomType: roomType!,
+                                                 themeId: themeRensou!.rensouId,
+                                                 keyword: keyword)) { result in
+            switch result {
+            case .success(let response):
+                self.resultRensous = response
+                self.performSegue(withIdentifier: "submitRensou",sender: nil)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as! ResultViewController
+        viewController.rensous = resultRensous!
     }
 }

@@ -32,4 +32,22 @@ final class RensouAPI {
         }
         let roomType: RoomType
     }
+    
+    struct PostRensouRequest: RensouRequest {
+        typealias Response = [Rensou]
+        
+        let method: HTTPMethod = .post
+        let path: String = "rensou.json"
+        var bodyParameters: BodyParameters? {
+            return JSONBodyParameters(JSONObject: ["user_id": userId,
+                                                   "room": roomType.id(),
+                                                   "theme_id": themeId,
+                                                   "keyword": keyword])
+        }
+        
+        let userId: Int
+        let roomType: RoomType
+        let themeId: Int
+        let keyword: String
+    }
 }

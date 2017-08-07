@@ -15,6 +15,8 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var gadBannerView: GADBannerView!
     
+    var rensous: [Rensou]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -69,22 +71,21 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     */
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if rensous == nil {
+            return 0
+        }
+        return rensous!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultRensouCell", for: indexPath) as! ResultRensouCell
         
-        if (indexPath.row % 2 == 0) {
+        if indexPath.row % 2 == 0 {
             cell.setLeftStyle()
         } else {
             cell.setRightStyle()
         }
-        
-//        let rensou = Rensou.init()
-//        rensou.oldKeyword = "バナナ"
-//        rensou.keyword = "きいろ"
-//        cell.setRensou(rensou: rensou)
+        cell.setRensou(rensous![indexPath.row])
         
         return cell
     }

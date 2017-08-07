@@ -48,7 +48,7 @@ class ResultRensouCell: UITableViewCell {
         containerViewLeadingConstraint.constant = 14;
     }
 
-    func setRensou(rensou: Rensou) {
+    func setRensou(_ rensou: Rensou) {
         rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
     }
 }
