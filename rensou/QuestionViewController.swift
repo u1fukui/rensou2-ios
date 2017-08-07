@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 import APIKit
 
-class QuestionViewController: UIViewController {
+class QuestionViewController: UIViewController, UITextFieldDelegate {
  
     @IBOutlet weak var themeLabel: UILabel!
 
@@ -29,6 +29,8 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"question_title"))
+        submitButton.isEnabled = false
+        textField.delegate = self
         initBannerView()
     }
 
@@ -74,6 +76,14 @@ class QuestionViewController: UIViewController {
         self.view.backgroundColor = UIColor(hex: roomType.backgroundColor())
         
         submitButton.backgroundColor = UIColor(hex: roomType.primaryColor())
+    }
+    
+    // MARK: - UITextFieldDelegate
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let text = (textField.text as NSString!).replacingCharacters(in: range, with: string)
+        submitButton.isEnabled = !text.isEmpty
+        return true;
     }
     
     // MARK: - Click Event
