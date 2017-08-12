@@ -50,4 +50,15 @@ final class RensouAPI {
         let themeId: Int
         let keyword: String
     }
+    
+    struct GetRankingList: RensouRequest {
+        typealias Response = [Rensou]
+        
+        let method: HTTPMethod = .get
+        let path: String = "rensous/ranking"
+        var parameters: Any? {
+            return ["room": roomType.id()]
+        }
+        let roomType: RoomType
+    }
 }

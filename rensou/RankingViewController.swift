@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import APIKit
 import GoogleMobileAds
 
 class RankingViewController: UIViewController, UITableViewDataSource {
@@ -17,12 +18,26 @@ class RankingViewController: UIViewController, UITableViewDataSource {
     
     var roomType: RoomType?
     
+    var rensous: [Rensou]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
         initBannerView()
         initTableView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchRankingList()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Initialization
 
     func initNavigationBar() {
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"ranking_title"))
@@ -41,31 +56,38 @@ class RankingViewController: UIViewController, UITableViewDataSource {
         gadBannerView.load(request)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func initTableView() {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
     }
+    
+    // MARK: - API
+    
+    func fetchRankingList() {
+        Session.send(RensouAPI.GetRankingList(roomType: roomType!)) { result in
+            switch result {
+            case .success(let response):
+                self.rensous = response
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    // MARK: - UITableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if let rensous = rensous {
+            return rensous.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rankingRensouCell", for: indexPath) as! RankingRensouCell
-        
-//        let rensou = Rensou.init()
-//        rensou.likeCount = 100
-//        rensou.oldKeyword = "ばなな"
-//        rensou.keyword = "きいろ"
-//        cell.setRensou(rensou: rensou, rank: indexPath.row + 1)
-        
+        cell.setRensou(rensou: rensous![indexPath.row], rank: indexPath.row + 1)
         cell.backgroundColor = UIColor(hex: roomType!.backgroundColor())
-        
         return cell
     }
 }
