@@ -74,4 +74,19 @@ enum RoomType: EnumEnumerable {
             return "e5b2ff"
         }
     }
+    
+    func likeButtonImageName() -> String {
+        switch self {
+        case .STUDENT:
+            return "button_like_on_student"
+        case .ADULT:
+            return "button_like_on_adult"
+        case .GIRL:
+            return "button_like_on_girl"
+        case .OTAKU:
+            return "button_like_on_otaku"
+        case .SECRET:
+            return "button_like_on_secret"
+        }
+    }
 }

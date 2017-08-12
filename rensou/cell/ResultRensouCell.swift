@@ -26,10 +26,7 @@ class ResultRensouCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
         likeButton.setImage(UIImage(named: "button_like_off"), for: UIControlState.normal)
-        likeButton.setImage(UIImage(named: "button_like_on"), for: UIControlState.selected)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -48,7 +45,9 @@ class ResultRensouCell: UITableViewCell {
         containerViewLeadingConstraint.constant = 14;
     }
 
-    func setRensou(_ rensou: Rensou) {
+    func setRensou(_ rensou: Rensou, roomType: RoomType) {
+        likeButton.setImage(UIImage(named: roomType.likeButtonImageName()), for: UIControlState.selected)
+        
         rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
     }
 }

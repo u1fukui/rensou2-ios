@@ -89,7 +89,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         } else {
             cell.setRightStyle()
         }
-        cell.setRensou(rensous![indexPath.row])
+        cell.setRensou(rensous![indexPath.row], roomType: roomType!)
         cell.backgroundColor = UIColor(hex: roomType!.backgroundColor())
 
         return cell
