@@ -20,11 +20,22 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - Result (3.2.3)
+  - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - APIKit (~> 3.1)
   - Firebase/AdMob
   - Firebase/Core
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+
+EXTERNAL SOURCES:
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  SVProgressHUD:
+    :commit: 7e3139d2d56b336e48c178cc4605966191f4ac24
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
   APIKit: 7460983f490d3bde6aaaaa4164d18c9865a6f91d
@@ -35,7 +46,8 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 168312cdc167fa22746d4ea8e839fc4825dd2966
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+  SVProgressHUD: d65371a8e4482380deddb9fe60e14e59ddb30eb3
 
-PODFILE CHECKSUM: 971526083108931baa00781f9790130035e9298c
+PODFILE CHECKSUM: 568068734b4035e199e7ad59c3d9e4e1a40f0eaa
 
 COCOAPODS: 1.2.1

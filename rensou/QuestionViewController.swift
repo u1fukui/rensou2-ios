@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import APIKit
+import GoogleMobileAds
+import SVProgressHUD
 
 class QuestionViewController: UIViewController, UITextFieldDelegate {
  
@@ -134,12 +135,17 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     // MARK: - API
     
     func fetchThemeRensou() {
+        SVProgressHUD.show()
+        
         Session.send(RensouAPI.GetThemeRensou(roomType: roomType!)) { result in
             switch result {
             case .success(let response):
+                SVProgressHUD.dismiss()
+                
                 self.themeRensou = response
                 self.themeLabel.text = response.keyword
             case .failure(let error):
+                SVProgressHUD.dismiss()
                 print(error)
             }
         }
@@ -148,15 +154,19 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     func postRensou(keyword: String) {
         let userId = DataSaveHelper.sharedInstance.loadUserId();
         
+        SVProgressHUD.show()
         Session.send(RensouAPI.PostRensouRequest(userId: userId!,
                                                  roomType: roomType!,
                                                  themeId: themeRensou!.rensouId,
                                                  keyword: keyword)) { result in
             switch result {
             case .success(let response):
+                SVProgressHUD.dismiss()
+                
                 self.resultRensous = response
                 self.performSegue(withIdentifier: "submitRensou",sender: nil)
             case .failure(let error):
+                SVProgressHUD.dismiss()
                 print(error)
             }
         }

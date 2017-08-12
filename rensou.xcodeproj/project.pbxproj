@@ -74,6 +74,8 @@
 		DB206E5C1EFFEE1000392576 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		DB22F5B01F1B5781005BBC12 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		DB22F5B21F1BA564005BBC12 /* RankingRensouCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingRensouCell.swift; sourceTree = "<group>"; };
+		DB263DC31F3F40B4006D2B1C /* rensou-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rensou-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB263DC91F3F4308006D2B1C /* Bridging-Header.h.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h.h"; sourceTree = "<group>"; };
 		DB2AA73A1F24EE2D00D359EE /* RensouUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RensouUtil.swift; sourceTree = "<group>"; };
 		DB3E210F1EE3D57000F7CC24 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		DB3E21111EE4048600F7CC24 /* RoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
@@ -209,12 +211,13 @@
 		DB9F08F81ED6F23500F3A263 = {
 			isa = PBXGroup;
 			children = (
+				96424BFE1A8043C9F01C9428 /* Frameworks */,
 				DB9F09031ED6F23500F3A263 /* rensou */,
 				DB9F09181ED6F23600F3A263 /* rensouTests */,
 				DB9F09231ED6F23600F3A263 /* rensouUITests */,
 				DB9F09021ED6F23500F3A263 /* Products */,
 				54A3A546F91322D18F22BD95 /* Pods */,
-				96424BFE1A8043C9F01C9428 /* Frameworks */,
+				DB263DC91F3F4308006D2B1C /* Bridging-Header.h.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,6 +250,7 @@
 				DB3E210F1EE3D57000F7CC24 /* QuestionViewController.swift */,
 				DB206E541EF2CDA100392576 /* ResultViewController.swift */,
 				DB22F5B01F1B5781005BBC12 /* RankingViewController.swift */,
+				DB263DC31F3F40B4006D2B1C /* rensou-Bridging-Header.h */,
 			);
 			path = rensou;
 			sourceTree = "<group>";
@@ -680,6 +684,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PRODUCT)/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
@@ -731,6 +736,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PRODUCT)/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
@@ -744,12 +750,15 @@
 			baseConfigurationReference = 6F4E282EE9999A319449E1DD /* Pods-rensou.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 36XBSC9G66;
 				INFOPLIST_FILE = rensou/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.u1fukui.rensou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rensou/rensou-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
@@ -760,12 +769,14 @@
 			baseConfigurationReference = 9D65FC8154DEB366FC061C75 /* Pods-rensou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 36XBSC9G66;
 				INFOPLIST_FILE = rensou/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.u1fukui.rensou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rensou/rensou-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};

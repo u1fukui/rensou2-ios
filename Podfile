@@ -9,6 +9,7 @@ target 'rensou' do
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
   pod 'APIKit', '~> 3.1'
+  pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 
   target 'rensouTests' do
     inherit! :search_paths
@@ -16,6 +17,7 @@ target 'rensou' do
     pod 'Firebase/Core'
     pod 'Firebase/AdMob'
     pod 'APIKit', '~> 3.1' 
+    pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
  end
 
   target 'rensouUITests' do
@@ -24,6 +26,7 @@ target 'rensou' do
     pod 'Firebase/Core'
     pod 'Firebase/AdMob'
     pod 'APIKit', '~> 3.1'
+    pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
   end
 
 end

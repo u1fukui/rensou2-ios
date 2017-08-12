@@ -9,6 +9,7 @@
 import UIKit
 import APIKit
 import GoogleMobileAds
+import SVProgressHUD
 
 class RankingViewController: UIViewController, UITableViewDataSource {
 
@@ -59,17 +60,22 @@ class RankingViewController: UIViewController, UITableViewDataSource {
     func initTableView() {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.backgroundColor = UIColor(hex: roomType!.backgroundColor())
     }
     
     // MARK: - API
     
     func fetchRankingList() {
+        SVProgressHUD.show()
         Session.send(RensouAPI.GetRankingList(roomType: roomType!)) { result in
             switch result {
             case .success(let response):
+                SVProgressHUD.dismiss()
+                
                 self.rensous = response
                 self.tableView.reloadData()
             case .failure(let error):
+                SVProgressHUD.dismiss()
                 print(error)
             }
         }
