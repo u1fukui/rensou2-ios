@@ -23,8 +23,9 @@ class RankingRensouCell: UITableViewCell {
         // Initialization code
     }
 
-    func setRensou(rensou: Rensou, rank: Int) {
+    func setRensou(rensou: Rensou, rank: Int, dateFormatter: DateFormatter) {
         rankIcon.image = UIImage(named: "rank" + rank.description + "_icon")
         rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
+        createdAtLabel.text = dateFormatter.string(from: rensou.createdAt)
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 struct Rensou: Decodable {
+    
     let rensouId: Int
     
     let likeCount: Int
@@ -17,7 +18,7 @@ struct Rensou: Decodable {
     
     let oldKeyword: String
     
-    let createdAt: String
+    let createdAt: Date
     
     private enum CodingKeys: String, CodingKey {
         case rensouId = "id"

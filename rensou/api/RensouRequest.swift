@@ -28,6 +28,12 @@ extension RensouRequest where Response: Decodable {
         guard let data = object as? Data else {
             throw ResponseError.unexpectedObject(object)
         }
-        return try JSONDecoder().decode(Response.self, from: data)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        formatter.timeZone = TimeZone.init(abbreviation: "UTC")
+        let decoder: JSONDecoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        return try decoder.decode(Response.self, from: data)
     }
 }

@@ -21,8 +21,11 @@ class RankingViewController: UIViewController, UITableViewDataSource {
     
     var rensous: [Rensou]?
     
+    let dateFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initDateFormatter()
         initNavigationBar()
         initBannerView()
         initTableView()
@@ -40,6 +43,10 @@ class RankingViewController: UIViewController, UITableViewDataSource {
     
     // MARK: - Initialization
 
+    func initDateFormatter() {
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+    }
+    
     func initNavigationBar() {
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"ranking_title"))
     }
@@ -92,7 +99,7 @@ class RankingViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rankingRensouCell", for: indexPath) as! RankingRensouCell
-        cell.setRensou(rensou: rensous![indexPath.row], rank: indexPath.row + 1)
+        cell.setRensou(rensou: rensous![indexPath.row], rank: indexPath.row + 1, dateFormatter: dateFormatter)
         cell.backgroundColor = UIColor(hex: roomType!.backgroundColor())
         return cell
     }

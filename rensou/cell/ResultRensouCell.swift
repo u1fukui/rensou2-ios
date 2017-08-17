@@ -45,9 +45,12 @@ class ResultRensouCell: UITableViewCell {
         containerViewLeadingConstraint.constant = 14;
     }
 
-    func setRensou(_ rensou: Rensou, roomType: RoomType) {
+    func setRensou(_ rensou: Rensou, roomType: RoomType, dateFormatter: DateFormatter) {
         likeButton.setImage(UIImage(named: roomType.likeButtonImageName()), for: UIControlState.selected)
         
         rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
+        createdAtLabel.text = dateFormatter.string(from: rensou.createdAt)
+        likeCountLabel.text = rensou.likeCount.description
+        likeButton.isSelected = true
     }
 }

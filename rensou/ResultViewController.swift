@@ -19,11 +19,18 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     
     var rensous: [Rensou]?
     
+    let dateFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initDateFormatter()
         initNavigationBar()
         initBannerView()
         initTableView()
+    }
+    
+    func initDateFormatter() {
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
     }
     
     func initNavigationBar() {
@@ -37,7 +44,6 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         gadBannerView.adUnitID = appDelegate.getConfigValue(key: "AD_UNIT_ID_FOR_BANNER") as? String
         gadBannerView.rootViewController = self
-        
         
         let request = GADRequest()
         if TARGET_OS_SIMULATOR == 1 {
@@ -89,7 +95,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         } else {
             cell.setRightStyle()
         }
-        cell.setRensou(rensous![indexPath.row], roomType: roomType!)
+        cell.setRensou(rensous![indexPath.row], roomType: roomType!, dateFormatter: dateFormatter)
         cell.backgroundColor = UIColor(hex: roomType!.backgroundColor())
 
         return cell
