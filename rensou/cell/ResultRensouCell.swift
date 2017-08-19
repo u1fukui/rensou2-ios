@@ -20,7 +20,7 @@ class ResultRensouCell: UITableViewCell {
     
     @IBOutlet weak var createdAtLabel: UILabel!
     
-    @IBOutlet weak var spamButton: UIButton!
+    @IBOutlet weak var reportButton: UIButton!
     
     @IBOutlet weak var likeButton: UIButton!
     
@@ -60,7 +60,7 @@ class ResultRensouCell: UITableViewCell {
             rensouLabel.text = "この投稿は通報済みです"
             likeCountLabel.isHidden = true
             likeButton.isHidden = true
-            spamButton.isHidden = true
+            reportButton.isHidden = true
         } else {
             likeButton.setImage(UIImage(named: roomType.likeButtonImageName()), for: UIControlState.selected)
             rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
@@ -69,7 +69,7 @@ class ResultRensouCell: UITableViewCell {
             likeCountLabel.isHidden = false
             likeButton.isSelected = true
             likeButton.isHidden = false
-            spamButton.isHidden = false
+            reportButton.isHidden = false
         }
     }
     
