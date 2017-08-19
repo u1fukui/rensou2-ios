@@ -55,12 +55,22 @@ class ResultRensouCell: UITableViewCell {
 
     func setRensou(_ rensou: Rensou, roomType: RoomType, dateFormatter: DateFormatter) {
         self.rensou = rensou
-        likeButton.setImage(UIImage(named: roomType.likeButtonImageName()), for: UIControlState.selected)
         
-        rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
-        createdAtLabel.text = dateFormatter.string(from: rensou.createdAt)
-        likeCountLabel.text = rensou.likeCount.description
-        likeButton.isSelected = true
+        if DataSaveHelper.sharedInstance.isReportedRensou(rensou) {
+            rensouLabel.text = "この投稿は通報済みです"
+            likeCountLabel.isHidden = true
+            likeButton.isHidden = true
+            spamButton.isHidden = true
+        } else {
+            likeButton.setImage(UIImage(named: roomType.likeButtonImageName()), for: UIControlState.selected)
+            rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
+            createdAtLabel.text = dateFormatter.string(from: rensou.createdAt)
+            likeCountLabel.text = rensou.likeCount.description
+            likeCountLabel.isHidden = false
+            likeButton.isSelected = true
+            likeButton.isHidden = false
+            spamButton.isHidden = false
+        }
     }
     
     @IBAction func onTouchDownReportButton(_ sender: Any) {

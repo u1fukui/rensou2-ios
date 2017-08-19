@@ -51,6 +51,20 @@ final class RensouAPI {
         let keyword: String
     }
     
+    struct ReportRensouRequest: RensouRequest {
+        typealias Response = Any // empty
+        
+        let method: HTTPMethod = .post
+        var path: String {
+            return String.init(format: "rensous/%d/spam", rensouId)
+        }
+        let rensouId: Int
+        
+        func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+            return object
+        }
+    }
+    
     struct GetRankingList: RensouRequest {
         typealias Response = [Rensou]
         

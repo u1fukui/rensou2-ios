@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import APIKit
+import SVProgressHUD
 import GoogleMobileAds
 
 class ResultViewController: UIViewController, UITableViewDataSource, ResultRensouCellDelegate {
@@ -112,7 +114,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, ResultRenso
         let defaultAction: UIAlertAction = UIAlertAction(title: "通報する",
                                                          style: UIAlertActionStyle.default,
                                                          handler: {(action: UIAlertAction!) -> Void in
-                                                            self.reportRensou(rensou)
+                                                            self.reportRensou(cell: cell, rensou: rensou)
         })
         
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル",
@@ -124,7 +126,21 @@ class ResultViewController: UIViewController, UITableViewDataSource, ResultRenso
         present(alert, animated: true, completion: nil)
     }
     
-    func reportRensou(_ rensou: Rensou) {
-        print("report")
+    func reportRensou(cell: ResultRensouCell, rensou: Rensou) {
+        SVProgressHUD.show()
+        Session.send(RensouAPI.ReportRensouRequest(rensouId: rensou.rensouId)) { result in
+            switch result {
+            case .success( _):
+                SVProgressHUD.dismiss()
+                DataSaveHelper.sharedInstance.setReportedRensou(rensou)
+                let indexPath = self.tableView.indexPath(for: cell)
+                if let indexPath = indexPath {
+                    self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                }
+            case .failure(let error):
+                SVProgressHUD.dismiss()
+                print(error)
+            }
+        }
     }
 }
