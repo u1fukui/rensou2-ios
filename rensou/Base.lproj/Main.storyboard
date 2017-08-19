@@ -241,6 +241,9 @@
                                                                 <constraint firstAttribute="height" constant="25" id="x3S-EA-IAp"/>
                                                             </constraints>
                                                             <state key="normal" image="button_spam"/>
+                                                            <connections>
+                                                                <action selector="onTouchDownReportButton:" destination="2Zl-53-5Ew" eventType="touchDown" id="iX8-b3-Md5"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWq-xp-3Z2">
                                                             <rect key="frame" x="273" y="65.5" width="20" height="17"/>

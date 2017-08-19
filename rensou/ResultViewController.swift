@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class ResultViewController: UIViewController, UITableViewDataSource {
+class ResultViewController: UIViewController, UITableViewDataSource, ResultRensouCellDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -95,9 +95,36 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         } else {
             cell.setRightStyle()
         }
+        cell.delegate = self
         cell.setRensou(rensous![indexPath.row], roomType: roomType!, dateFormatter: dateFormatter)
         cell.backgroundColor = UIColor(hex: roomType!.backgroundColor())
 
         return cell
+    }
+    
+    // MARK: - ResultRensouCellDelegate
+    
+    func onTouchDownReportButton(cell: ResultRensouCell, rensou: Rensou) {
+        let alert: UIAlertController = UIAlertController(title: "確認",
+                                                         message: "この投稿を通報します。宜しいでしょうか？",
+                                                         preferredStyle:  UIAlertControllerStyle.alert)
+        
+        let defaultAction: UIAlertAction = UIAlertAction(title: "通報する",
+                                                         style: UIAlertActionStyle.default,
+                                                         handler: {(action: UIAlertAction!) -> Void in
+                                                            self.reportRensou(rensou)
+        })
+        
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル",
+                                                        style: UIAlertActionStyle.cancel,
+                                                        handler: nil)
+        
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func reportRensou(_ rensou: Rensou) {
+        print("report")
     }
 }

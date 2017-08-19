@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ResultRensouCellDelegate {
+    func onTouchDownReportButton(cell: ResultRensouCell, rensou: Rensou)
+}
+
 class ResultRensouCell: UITableViewCell {
 
     @IBOutlet weak var bgView: UIImageView!
@@ -23,6 +27,10 @@ class ResultRensouCell: UITableViewCell {
     @IBOutlet weak var likeCountLabel: UILabel!
     
     @IBOutlet weak var containerViewLeadingConstraint: NSLayoutConstraint!
+    
+    var delegate: ResultRensouCellDelegate?
+    
+    var rensou: Rensou?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,11 +54,18 @@ class ResultRensouCell: UITableViewCell {
     }
 
     func setRensou(_ rensou: Rensou, roomType: RoomType, dateFormatter: DateFormatter) {
+        self.rensou = rensou
         likeButton.setImage(UIImage(named: roomType.likeButtonImageName()), for: UIControlState.selected)
         
         rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
         createdAtLabel.text = dateFormatter.string(from: rensou.createdAt)
         likeCountLabel.text = rensou.likeCount.description
         likeButton.isSelected = true
+    }
+    
+    @IBAction func onTouchDownReportButton(_ sender: Any) {
+        if let delegate = delegate, let rensou = rensou {
+            delegate.onTouchDownReportButton(cell: self, rensou: rensou)
+        }
     }
 }
