@@ -65,6 +65,34 @@ final class RensouAPI {
         }
     }
     
+    struct LikeRensouRequest: RensouRequest {
+        typealias Response = Any // empty
+        
+        let method: HTTPMethod = .post
+        var path: String {
+            return String.init(format: "rensous/%d/like", rensouId)
+        }
+        let rensouId: Int
+        
+        func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+            return object
+        }
+    }
+    
+    struct UnlikeRensouRequest: RensouRequest {
+        typealias Response = Any // empty
+        
+        let method: HTTPMethod = .delete
+        var path: String {
+            return String.init(format: "rensous/%d/like", rensouId)
+        }
+        let rensouId: Int
+        
+        func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+            return object
+        }
+    }
+    
     struct GetRankingList: RensouRequest {
         typealias Response = [Rensou]
         

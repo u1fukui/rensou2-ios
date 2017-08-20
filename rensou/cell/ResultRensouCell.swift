@@ -9,6 +9,11 @@
 import UIKit
 
 protocol ResultRensouCellDelegate {
+
+    func isChangedLikeState(_ rensou: Rensou) -> Bool?
+    
+    func onTouchDownLikeButton(cell: ResultRensouCell, rensou: Rensou)
+
     func onTouchDownReportButton(cell: ResultRensouCell, rensou: Rensou)
 }
 
@@ -65,11 +70,30 @@ class ResultRensouCell: UITableViewCell {
             likeButton.setImage(UIImage(named: roomType.likeButtonImageName()), for: UIControlState.selected)
             rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
             createdAtLabel.text = dateFormatter.string(from: rensou.createdAt)
-            likeCountLabel.text = rensou.likeCount.description
-            likeCountLabel.isHidden = false
-            likeButton.isSelected = true
+            likeButton.isSelected = DataSaveHelper.sharedInstance.isLikedRensou(rensou)
             likeButton.isHidden = false
             reportButton.isHidden = false
+            
+            var likeCount = rensou.likeCount
+            if let delegate = delegate {
+                if delegate.isChangedLikeState(rensou) == true {
+                    if DataSaveHelper.sharedInstance.isLikedRensou(rensou) {
+                        likeCount = likeCount + 1
+                    } else {
+                        likeCount = likeCount - 1
+                    }
+                } else {
+                    likeCountLabel.text = rensou.likeCount.description
+                }
+            }
+            likeCountLabel.text = likeCount.description
+            likeCountLabel.isHidden = false
+        }
+    }
+    
+    @IBAction func onTouchDownLikeButton(_ sender: Any) {
+        if let delegate = delegate, let rensou = rensou {
+            delegate.onTouchDownLikeButton(cell: self, rensou: rensou)
         }
     }
     

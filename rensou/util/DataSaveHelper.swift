@@ -14,7 +14,11 @@ class DataSaveHelper {
 
     private static let KEY_USER_ID: String = "key.user_id"
     
+    private static let KEY_LIKED_RENSOU_IDS = "key.liked_rensou_ids"
+    
     private static let KEY_REPORTED_RENSOU_IDS = "key.reported_rensou_ids"
+    
+    // MARK: - User ID
     
     func saveUserId(_ userId: Int) {
         UserDefaults.standard.set(userId, forKey: DataSaveHelper.KEY_USER_ID)
@@ -33,11 +37,54 @@ class DataSaveHelper {
         UserDefaults.standard.synchronize()
     }
     
-    func isReportedRensou(_ rensou: Rensou) -> Bool {
-        if UserDefaults.standard.object(forKey: DataSaveHelper.KEY_REPORTED_RENSOU_IDS) == nil {
-            return false
+    // MARK: - Like State
+    
+    func isLikedRensou(_ rensou: Rensou) -> Bool {
+        guard
+            let array = UserDefaults.standard.array(forKey: DataSaveHelper.KEY_LIKED_RENSOU_IDS),
+            array is [Int]
+            else {
+                return false;
         }
-        let ids = UserDefaults.standard.array(forKey: DataSaveHelper.KEY_REPORTED_RENSOU_IDS) as! [Int];
+        
+        let ids = array as! [Int]
+        for id in ids {
+            if id == rensou.rensouId {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func setLikedRensou(_ rensou: Rensou, isLiked: Bool) {
+        var array = UserDefaults.standard.array(forKey: DataSaveHelper.KEY_LIKED_RENSOU_IDS);
+        if array == nil {
+            array = []
+        }
+        var ids = array as! [Int]
+        if isLiked {
+            ids.append(rensou.rensouId)
+        } else {
+            let index = ids.index(of: rensou.rensouId)
+            if let index = index {
+                ids.remove(at: index)
+            }
+        }
+        UserDefaults.standard.set(ids, forKey: DataSaveHelper.KEY_LIKED_RENSOU_IDS)
+        UserDefaults.standard.synchronize()
+    }
+    
+    // MARK: - Report State
+    
+    func isReportedRensou(_ rensou: Rensou) -> Bool {
+        guard
+            let array = UserDefaults.standard.array(forKey: DataSaveHelper.KEY_REPORTED_RENSOU_IDS),
+            array is [Int]
+            else {
+                return false;
+        }
+        
+        let ids = array as! [Int]
         for id in ids {
             if id == rensou.rensouId {
                 return true
@@ -47,14 +94,12 @@ class DataSaveHelper {
     }
     
     func setReportedRensou(_ rensou: Rensou) {
-        let key = DataSaveHelper.KEY_REPORTED_RENSOU_IDS
-        if UserDefaults.standard.object(forKey: key) == nil {
-             UserDefaults.standard.set([rensou.rensouId], forKey: key)
-        } else {
-            var ids = UserDefaults.standard.array(forKey: key) as! [Int];
-            ids.append(rensou.rensouId)
-            UserDefaults.standard.set(ids, forKey: key)
+        var ids = UserDefaults.standard.array(forKey: DataSaveHelper.KEY_REPORTED_RENSOU_IDS);
+        if ids == nil {
+            ids = []
         }
+        ids?.append(rensou.rensouId)
+        UserDefaults.standard.set(ids, forKey: DataSaveHelper.KEY_REPORTED_RENSOU_IDS)
         UserDefaults.standard.synchronize()
     }
 }

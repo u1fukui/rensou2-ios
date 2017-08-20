@@ -21,6 +21,8 @@ class ResultViewController: UIViewController, UITableViewDataSource, ResultRenso
     
     var rensous: [Rensou]?
     
+    var likeStateDictionary = [Int: Bool]()
+    
     let dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
@@ -105,6 +107,58 @@ class ResultViewController: UIViewController, UITableViewDataSource, ResultRenso
     }
     
     // MARK: - ResultRensouCellDelegate
+    
+    func isChangedLikeState(_ rensou: Rensou) -> Bool? {
+        return likeStateDictionary[rensou.rensouId]
+    }
+    
+    func onTouchDownLikeButton(cell: ResultRensouCell, rensou: Rensou) {
+        if DataSaveHelper.sharedInstance.isLikedRensou(rensou) {
+            unlikeRensou(cell: cell, rensou: rensou)
+        } else {
+            likeRensou(cell: cell, rensou: rensou)
+        }
+    }
+    
+    func likeRensou(cell: ResultRensouCell, rensou: Rensou) {
+        SVProgressHUD.show()
+        Session.send(RensouAPI.LikeRensouRequest(rensouId: rensou.rensouId)) { result in
+            switch result {
+            case .success( _):
+                SVProgressHUD.dismiss()
+                self.likeStateDictionary[rensou.rensouId] = self.likeStateDictionary[rensou.rensouId] != true
+                
+                DataSaveHelper.sharedInstance.setLikedRensou(rensou, isLiked: true)
+                let indexPath = self.tableView.indexPath(for: cell)
+                if let indexPath = indexPath {
+                    self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                }
+            case .failure(let error):
+                SVProgressHUD.dismiss()
+                print(error)
+            }
+        }
+    }
+    
+    func unlikeRensou(cell: ResultRensouCell, rensou: Rensou) {
+        SVProgressHUD.show()
+        Session.send(RensouAPI.UnlikeRensouRequest(rensouId: rensou.rensouId)) { result in
+            switch result {
+            case .success( _):
+                SVProgressHUD.dismiss()
+                self.likeStateDictionary[rensou.rensouId] = self.likeStateDictionary[rensou.rensouId] != true
+                
+                DataSaveHelper.sharedInstance.setLikedRensou(rensou, isLiked: false)
+                let indexPath = self.tableView.indexPath(for: cell)
+                if let indexPath = indexPath {
+                    self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                }
+            case .failure(let error):
+                SVProgressHUD.dismiss()
+                print(error)
+            }
+        }
+    }
     
     func onTouchDownReportButton(cell: ResultRensouCell, rensou: Rensou) {
         let alert: UIAlertController = UIAlertController(title: "確認",

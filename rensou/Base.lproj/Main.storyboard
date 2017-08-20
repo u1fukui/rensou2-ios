@@ -261,6 +261,9 @@
                                                                 <constraint firstAttribute="height" constant="25" id="naz-er-FZP"/>
                                                             </constraints>
                                                             <state key="normal" image="button_like_off"/>
+                                                            <connections>
+                                                                <action selector="onTouchDownLikeButton:" destination="2Zl-53-5Ew" eventType="touchDown" id="EXB-fw-mCE"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
