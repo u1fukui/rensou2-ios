@@ -63,16 +63,16 @@ class SelectRoomViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func showAgreementAlert() {
-        let alert: UIAlertController = UIAlertController(title: "確認",
-                                                         message: "サービスを利用するには以下の内容に同意下さい。\n\n1. 禁止事項\n・個人情報や他の方が不快と感じるような内容は投稿しないで下さい\n\n2. 表示内容について\n・不快と感じる投稿が表示される可能性があります\n・不快な投稿があった場合は通報ボタンを押して下さい",
-                                                         preferredStyle:  UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "確認",
+                                      message: "サービスを利用するには以下の内容に同意下さい。\n\n1. 禁止事項\n・個人情報や他の方が不快と感じるような内容は投稿しないで下さい\n\n2. 表示内容について\n・不快と感じる投稿が表示される可能性があります\n・不快な投稿があった場合は通報ボタンを押して下さい",
+                                      preferredStyle:  UIAlertControllerStyle.alert)
         
-        let defaultAction: UIAlertAction = UIAlertAction(title: "同意する",
-                                                         style: UIAlertActionStyle.default,
-                                                         handler: {(action: UIAlertAction!) -> Void in
-                                                            self.registerUser()
-        })
-        alert.addAction(defaultAction)
+        alert.addAction(UIAlertAction(title: "同意する",
+                                      style: UIAlertActionStyle.default,
+                                      handler: {(action: UIAlertAction!) -> Void in
+                                        self.registerUser()
+        }))
+        
         
         present(alert, animated: true, completion: nil)
     }
@@ -83,11 +83,16 @@ class SelectRoomViewController: UIViewController, UITableViewDataSource, UITable
             case .success(let response):
                 DataSaveHelper.sharedInstance.saveUserId(response.userId)
             case .failure(let error):
-                print(error)
+                ApiErrorHandler.showErrorAlert(alertType: ApiErrorHandler.AlertType.FORCE_RELOAD,
+                                               viewController: self,
+                                               error: error,
+                                               reloadAction: {(action: UIAlertAction) in
+                                                self.registerUser()
+                                                
+                })
             }
         }
     }
-    
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

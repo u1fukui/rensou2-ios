@@ -193,7 +193,10 @@ class ResultViewController: UIViewController, UITableViewDataSource, ResultRenso
                 }
             case .failure(let error):
                 SVProgressHUD.dismiss()
-                print(error)
+                ApiErrorHandler.showErrorAlert(alertType: ApiErrorHandler.AlertType.OK,
+                                               viewController: self,
+                                               error: error,
+                                               reloadAction: nil)
             }
         }
     }

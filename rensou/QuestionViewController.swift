@@ -146,7 +146,12 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
                 self.themeLabel.text = response.keyword
             case .failure(let error):
                 SVProgressHUD.dismiss()
-                print(error)
+                ApiErrorHandler.showErrorAlert(alertType: ApiErrorHandler.AlertType.FORCE_RELOAD,
+                                               viewController: self,
+                                               error: error,
+                                               reloadAction: {(action: UIAlertAction) in
+                    self.fetchThemeRensou()
+                })
             }
         }
     }
@@ -167,7 +172,10 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
                 self.performSegue(withIdentifier: "submitRensou",sender: nil)
             case .failure(let error):
                 SVProgressHUD.dismiss()
-                print(error)
+                ApiErrorHandler.showErrorAlert(alertType: ApiErrorHandler.AlertType.OK,
+                                               viewController: self,
+                                               error: error,
+                                               reloadAction: nil)
             }
         }
     }

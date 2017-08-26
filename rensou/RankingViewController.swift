@@ -83,7 +83,12 @@ class RankingViewController: UIViewController, UITableViewDataSource {
                 self.tableView.reloadData()
             case .failure(let error):
                 SVProgressHUD.dismiss()
-                print(error)
+                ApiErrorHandler.showErrorAlert(alertType: ApiErrorHandler.AlertType.RELOAD,
+                                               viewController: self,
+                                               error: error,
+                                               reloadAction: {(action: UIAlertAction) in
+                                                self.fetchRankingList()
+                })
             }
         }
     }
