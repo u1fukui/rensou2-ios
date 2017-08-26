@@ -19,6 +19,8 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var submitButton: UIButton!
     
+    @IBOutlet weak var inputViewsContainer: UIStackView!
+    
     @IBOutlet weak var gadBannerView: GADBannerView!
     
     var roomType: RoomType?
@@ -30,8 +32,8 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"question_title"))
-        submitButton.isEnabled = false
-        textField.delegate = self
+        
+        initInputViews()
         initBannerView()
     }
 
@@ -56,6 +58,11 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     }
 
     // MARK: - Initialization methods
+    
+    func initInputViews() {
+        submitButton.isEnabled = false
+        textField.delegate = self
+    }
     
     func initBannerView() {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -136,6 +143,7 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     
     func fetchThemeRensou() {
         SVProgressHUD.show()
+        inputViewsContainer.isHidden = true
         
         Session.send(RensouAPI.GetThemeRensou(roomType: roomType!)) { result in
             switch result {
@@ -144,9 +152,10 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
                 
                 self.themeRensou = response
                 self.themeLabel.text = response.keyword
+                self.inputViewsContainer.isHidden = false
             case .failure(let error):
                 SVProgressHUD.dismiss()
-                ApiErrorHandler.showErrorAlert(alertType: ApiErrorHandler.AlertType.FORCE_RELOAD,
+                ApiErrorHandler.showErrorAlert(alertType: ApiErrorHandler.AlertType.RELOAD,
                                                viewController: self,
                                                error: error,
                                                reloadAction: {(action: UIAlertAction) in

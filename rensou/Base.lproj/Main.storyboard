@@ -115,7 +115,7 @@
                                         <rect key="frame" x="159" y="158" width="95" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="連想テーマ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqn-WO-BS1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqn-WO-BS1">
                                         <rect key="frame" x="45" y="80" width="170" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="dbT-yN-JAT"/>
@@ -183,6 +183,7 @@
                     </view>
                     <connections>
                         <outlet property="gadBannerView" destination="5p4-Qe-had" id="x5t-32-BBG"/>
+                        <outlet property="inputViewsContainer" destination="DJH-9J-G7C" id="VG0-lb-m7m"/>
                         <outlet property="submitButton" destination="Xdg-ed-2G6" id="Xpb-xw-our"/>
                         <outlet property="textField" destination="0aN-fn-RCL" id="1yQ-sJ-bpi"/>
                         <outlet property="themeLabel" destination="lqn-WO-BS1" id="oGE-dt-7O9"/>
