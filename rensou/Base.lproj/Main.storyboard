@@ -205,13 +205,51 @@
                     <view key="view" contentMode="scaleToFill" id="dQ8-hH-jsa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwN-I1-dEk" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="J7n-Fm-PGx"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TLC-DB-VtK">
+                                <rect key="frame" x="0.0" y="64" width="320" height="290"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_description" translatesAutoresizingMaskIntoConstraints="NO" id="gDm-a5-ekl">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgf-gt-V3g">
+                                        <rect key="frame" x="0.0" y="195" width="320" height="40"/>
+                                        <state key="normal" image="info_license_button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8T-sL-Xzb">
+                                        <rect key="frame" x="0.0" y="250" width="320" height="40"/>
+                                        <state key="normal" image="info_mail_button"/>
+                                        <connections>
+                                            <action selector="onTouchDownMailButton:" destination="rLu-XU-Nnm" eventType="touchDown" id="CEq-PE-2k8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Uw-te-R5v" firstAttribute="top" secondItem="rwN-I1-dEk" secondAttribute="bottom" id="0SZ-db-8D9"/>
+                            <constraint firstAttribute="trailing" secondItem="rwN-I1-dEk" secondAttribute="trailing" id="b2f-b9-jry"/>
+                            <constraint firstItem="rwN-I1-dEk" firstAttribute="leading" secondItem="dQ8-hH-jsa" secondAttribute="leading" id="fhD-dU-Irp"/>
+                            <constraint firstItem="TLC-DB-VtK" firstAttribute="centerX" secondItem="dQ8-hH-jsa" secondAttribute="centerX" id="rCc-0M-6vK"/>
+                            <constraint firstItem="TLC-DB-VtK" firstAttribute="top" secondItem="dQ8-hH-jsa" secondAttribute="top" constant="64" id="wMW-JL-D5Z"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TPf-yc-uNZ"/>
+                    <connections>
+                        <outlet property="gadBannerView" destination="rwN-I1-dEk" id="Ivn-wq-Z4j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYF-De-CNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="891" y="-868"/>
+            <point key="canvasLocation" x="890.625" y="-868.30985915492954"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="3Ac-Xa-vka">
@@ -494,6 +532,9 @@
     <resources>
         <image name="button_like_off" width="50" height="25"/>
         <image name="button_spam" width="25" height="25"/>
+        <image name="info_description" width="320" height="180"/>
+        <image name="info_license_button" width="300" height="40"/>
+        <image name="info_mail_button" width="300" height="40"/>
         <image name="question_submit_button" width="50" height="40"/>
         <image name="question_theme_bg" width="320" height="240"/>
         <image name="question_theme_suffix" width="95" height="36"/>
