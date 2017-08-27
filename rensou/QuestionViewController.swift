@@ -31,8 +31,8 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.titleView = UIImageView(image:UIImage(named:"question_title"))
         
+        initNavigationBar()
         initInputViews()
         initBannerView()
     }
@@ -58,6 +58,13 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     }
 
     // MARK: - Initialization methods
+    
+    func initNavigationBar() {
+        self.navigationItem.titleView = UIImageView(image:UIImage(named:"question_title"))
+        
+        let image = UIImage(named: "navigation_info")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.plain, target: self, action: #selector(QuestionViewController.onTapInfoButton))
+    }
     
     func initInputViews() {
         submitButton.isEnabled = false
@@ -92,6 +99,14 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
         let text = (textField.text as NSString!).replacingCharacters(in: range, with: string)
         submitButton.isEnabled = !text.isEmpty
         return true;
+    }
+    
+    // MARK: - Navigation
+    
+    @objc func onTapInfoButton() {
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "info")
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
     
     // MARK: - Click Event

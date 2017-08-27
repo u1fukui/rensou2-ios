@@ -194,6 +194,25 @@
             </objects>
             <point key="canvasLocation" x="864.375" y="-132.04225352112675"/>
         </scene>
+        <!--App Info View Controller-->
+        <scene sceneID="RcV-tS-jU2">
+            <objects>
+                <viewController storyboardIdentifier="info" id="rLu-XU-Nnm" customClass="AppInfoViewController" customModule="rensou" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G53-IH-6bg"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Uw-te-R5v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dQ8-hH-jsa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TPf-yc-uNZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYF-De-CNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="-868"/>
+        </scene>
         <!--Result View Controller-->
         <scene sceneID="3Ac-Xa-vka">
             <objects>
