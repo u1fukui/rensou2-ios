@@ -222,6 +222,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgf-gt-V3g">
                                         <rect key="frame" x="0.0" y="195" width="320" height="40"/>
                                         <state key="normal" image="info_license_button"/>
+                                        <connections>
+                                            <segue destination="W2F-IW-23W" kind="show" id="uMy-5e-b6T"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8T-sL-Xzb">
                                         <rect key="frame" x="0.0" y="250" width="320" height="40"/>
@@ -250,6 +253,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYF-De-CNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="890.625" y="-868.30985915492954"/>
+        </scene>
+        <!--License View Controller-->
+        <scene sceneID="7hw-Ms-HcW">
+            <objects>
+                <viewController id="W2F-IW-23W" customClass="LicenseViewController" customModule="rensou" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hxQ-sJ-V58"/>
+                        <viewControllerLayoutGuide type="bottom" id="6z4-j1-QqB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pGK-F9-cBV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSr-fY-Azo">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jSr-fY-Azo" firstAttribute="top" secondItem="hxQ-sJ-V58" secondAttribute="bottom" id="2xS-iB-xEP"/>
+                            <constraint firstItem="jSr-fY-Azo" firstAttribute="trailing" secondItem="pGK-F9-cBV" secondAttribute="trailing" id="Otv-ug-FGe"/>
+                            <constraint firstItem="jSr-fY-Azo" firstAttribute="leading" secondItem="pGK-F9-cBV" secondAttribute="leading" id="QQw-dj-O7S"/>
+                            <constraint firstItem="6z4-j1-QqB" firstAttribute="top" secondItem="jSr-fY-Azo" secondAttribute="bottom" id="rPF-Sx-lok"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="webView" destination="jSr-fY-Azo" id="YRY-R6-rPP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IjB-05-vFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1792.5" y="-868.30985915492954"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="3Ac-Xa-vka">
