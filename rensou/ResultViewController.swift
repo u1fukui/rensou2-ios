@@ -29,8 +29,8 @@ class ResultViewController: BaseViewController, UITableViewDataSource, ResultRen
         super.viewDidLoad()
         initDateFormatter()
         initNavigationBar()
-        initBannerView()
         initTableView()
+        setupBannerView(gadBannerView)
     }
     
     func initDateFormatter() {
@@ -42,18 +42,6 @@ class ResultViewController: BaseViewController, UITableViewDataSource, ResultRen
         
         let image = UIImage(named: "navigation_ranking")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.plain, target: self, action: #selector(ResultViewController.tapRankingButton))
-    }
-
-    func initBannerView() {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        gadBannerView.adUnitID = appDelegate.getConfigValue(key: "AD_UNIT_ID_FOR_BANNER") as? String
-        gadBannerView.rootViewController = self
-        
-        let request = GADRequest()
-        if TARGET_OS_SIMULATOR == 1 {
-            request.testDevices = [kGADSimulatorID]
-        }
-        gadBannerView.load(request)
     }
     
     func initTableView() {

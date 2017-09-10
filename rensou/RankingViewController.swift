@@ -27,8 +27,8 @@ class RankingViewController: BaseViewController, UITableViewDataSource {
         super.viewDidLoad()
         initDateFormatter()
         initNavigationBar()
-        initBannerView()
         initTableView()
+        setupBannerView(gadBannerView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,19 +49,6 @@ class RankingViewController: BaseViewController, UITableViewDataSource {
     
     func initNavigationBar() {
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"ranking_title"))
-    }
-    
-    func initBannerView() {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        gadBannerView.adUnitID = appDelegate.getConfigValue(key: "AD_UNIT_ID_FOR_BANNER") as? String
-        gadBannerView.rootViewController = self
-        
-        
-        let request = GADRequest()
-        if TARGET_OS_SIMULATOR == 1 {
-            request.testDevices = [kGADSimulatorID]
-        }
-        gadBannerView.load(request)
     }
     
     func initTableView() {

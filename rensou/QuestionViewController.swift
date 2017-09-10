@@ -34,7 +34,7 @@ class QuestionViewController: BaseViewController, UITextFieldDelegate {
         
         initNavigationBar()
         initInputViews()
-        initBannerView()
+        setupBannerView(gadBannerView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -69,18 +69,6 @@ class QuestionViewController: BaseViewController, UITextFieldDelegate {
     func initInputViews() {
         submitButton.isEnabled = false
         textField.delegate = self
-    }
-    
-    func initBannerView() {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        gadBannerView.adUnitID = appDelegate.getConfigValue(key: "AD_UNIT_ID_FOR_BANNER") as? String
-        gadBannerView.rootViewController = self
-        
-        let request = GADRequest()
-        if TARGET_OS_SIMULATOR == 1 {
-            request.testDevices = [kGADSimulatorID]
-        }
-        gadBannerView.load(request)
     }
     
     func initRoomTypeTheme(_ roomType: RoomType) {

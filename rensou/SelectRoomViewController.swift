@@ -22,7 +22,7 @@ class SelectRoomViewController: BaseViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         
         initNavigationBar()
-        initBannerView()
+        setupBannerView(gadBannerView)
         
         let userId = DataSaveHelper.sharedInstance.loadUserId()
         if userId == nil {
@@ -47,19 +47,6 @@ class SelectRoomViewController: BaseViewController, UITableViewDataSource, UITab
     
     func initNavigationBar() {
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"select_room_title"))
-    }
-    
-    func initBannerView() {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        gadBannerView.adUnitID = appDelegate.getConfigValue(key: "AD_UNIT_ID_FOR_BANNER") as? String
-        gadBannerView.rootViewController = self
-        
-        
-        let request = GADRequest()
-        if TARGET_OS_SIMULATOR == 1 {
-            request.testDevices = [kGADSimulatorID]
-        }
-        gadBannerView.load(request)
     }
     
     func showAgreementAlert() {

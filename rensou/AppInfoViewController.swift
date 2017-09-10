@@ -16,7 +16,7 @@ class AppInfoViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
-        initBannerView()
+        setupBannerView(gadBannerView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,18 +42,6 @@ class AppInfoViewController: BaseViewController {
     
     func initNavigationBar() {
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"info_title"))
-    }
-    
-    func initBannerView() {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        gadBannerView.adUnitID = appDelegate.getConfigValue(key: "AD_UNIT_ID_FOR_BANNER") as? String
-        gadBannerView.rootViewController = self
-        
-        let request = GADRequest()
-        if TARGET_OS_SIMULATOR == 1 {
-            request.testDevices = [kGADSimulatorID]
-        }
-        gadBannerView.load(request)
     }
     
     // MARK: - Click event

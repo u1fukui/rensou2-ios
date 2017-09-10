@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class BaseViewController: UIViewController {
 
@@ -17,5 +18,17 @@ class BaseViewController: UIViewController {
     
     private func setupCustomBackButton() {
         navigationController!.navigationBar.topItem!.title = ""
+    }
+    
+    func setupBannerView(_ gadBannerView: GADBannerView) {
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        gadBannerView.adUnitID = appDelegate.getConfigValue(key: "AD_UNIT_ID_FOR_BANNER") as? String
+        gadBannerView.rootViewController = self
+    
+        let request = GADRequest()
+        if TARGET_OS_SIMULATOR == 1 {
+            request.testDevices = [kGADSimulatorID]
+        }
+        gadBannerView.load(request)
     }
 }
