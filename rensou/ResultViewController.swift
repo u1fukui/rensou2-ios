@@ -11,7 +11,7 @@ import APIKit
 import SVProgressHUD
 import GoogleMobileAds
 
-class ResultViewController: UIViewController, UITableViewDataSource, ResultRensouCellDelegate {
+class ResultViewController: BaseViewController, UITableViewDataSource, ResultRensouCellDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     

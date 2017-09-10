@@ -11,7 +11,7 @@ import APIKit
 import GoogleMobileAds
 import SVProgressHUD
 
-class QuestionViewController: UIViewController, UITextFieldDelegate {
+class QuestionViewController: BaseViewController, UITextFieldDelegate {
  
     @IBOutlet weak var themeLabel: UILabel!
 

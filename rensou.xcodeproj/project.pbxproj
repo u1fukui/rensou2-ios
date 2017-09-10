@@ -22,6 +22,7 @@
 		DB206E5D1EFFEE1000392576 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB206E5C1EFFEE1000392576 /* Config.plist */; };
 		DB22F5B11F1B5781005BBC12 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22F5B01F1B5781005BBC12 /* RankingViewController.swift */; };
 		DB22F5B31F1BA564005BBC12 /* RankingRensouCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22F5B21F1BA564005BBC12 /* RankingRensouCell.swift */; };
+		DB2315D81F65767600E4D0F9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2315D71F65767600E4D0F9 /* BaseViewController.swift */; };
 		DB23FB241F5195D800A7C53E /* ApiErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB23FB231F5195D800A7C53E /* ApiErrorHandler.swift */; };
 		DB25676E1F526A2F0012B4B6 /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB25676D1F526A2F0012B4B6 /* AppInfoViewController.swift */; };
 		DB2AA73B1F24EE2D00D359EE /* RensouUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2AA73A1F24EE2D00D359EE /* RensouUtil.swift */; };
@@ -80,6 +81,7 @@
 		DB206E5C1EFFEE1000392576 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		DB22F5B01F1B5781005BBC12 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		DB22F5B21F1BA564005BBC12 /* RankingRensouCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingRensouCell.swift; sourceTree = "<group>"; };
+		DB2315D71F65767600E4D0F9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DB23FB231F5195D800A7C53E /* ApiErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorHandler.swift; sourceTree = "<group>"; };
 		DB25676D1F526A2F0012B4B6 /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
 		DB263DC31F3F40B4006D2B1C /* rensou-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rensou-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -263,14 +265,15 @@
 				DB9F09101ED6F23500F3A263 /* Info.plist */,
 				DB206E5C1EFFEE1000392576 /* Config.plist */,
 				DB206E581EFFD98500392576 /* GoogleService-Info.plist */,
+				DB263DC31F3F40B4006D2B1C /* rensou-Bridging-Header.h */,
 				DB9F09041ED6F23500F3A263 /* AppDelegate.swift */,
+				DB2315D71F65767600E4D0F9 /* BaseViewController.swift */,
 				DB9F09061ED6F23500F3A263 /* SelectRoomViewController.swift */,
 				DB3E210F1EE3D57000F7CC24 /* QuestionViewController.swift */,
 				DB25676D1F526A2F0012B4B6 /* AppInfoViewController.swift */,
 				DB1E6DC51F52FC20002288D5 /* LicenseViewController.swift */,
 				DB206E541EF2CDA100392576 /* ResultViewController.swift */,
 				DB22F5B01F1B5781005BBC12 /* RankingViewController.swift */,
-				DB263DC31F3F40B4006D2B1C /* rensou-Bridging-Header.h */,
 			);
 			path = rensou;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				DB25676E1F526A2F0012B4B6 /* AppInfoViewController.swift in Sources */,
 				DB0580A71F2E171600AF6006 /* UserRegistrationResponse.swift in Sources */,
 				DB0580A91F2E1FA500AF6006 /* DataSaveHelper.swift in Sources */,
+				DB2315D81F65767600E4D0F9 /* BaseViewController.swift in Sources */,
 				DB139A5D1F2DC9D900155291 /* DecodableDataParser.swift in Sources */,
 				DB76A1E91EE423DE00125B09 /* EnumEnumerable.swift in Sources */,
 				DBC0AFCF1F120D5900773916 /* Rensou.swift in Sources */,

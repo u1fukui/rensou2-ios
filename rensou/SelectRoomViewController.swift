@@ -10,7 +10,7 @@ import UIKit
 import APIKit
 import GoogleMobileAds
 
-class SelectRoomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SelectRoomViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     

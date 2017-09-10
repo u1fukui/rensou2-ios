@@ -11,7 +11,7 @@ import APIKit
 import GoogleMobileAds
 import SVProgressHUD
 
-class RankingViewController: UIViewController, UITableViewDataSource {
+class RankingViewController: BaseViewController, UITableViewDataSource {
 
     @IBOutlet weak var gadBannerView: GADBannerView!
     

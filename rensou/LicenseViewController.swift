@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LicenseViewController: UIViewController {
+class LicenseViewController: BaseViewController {
 
     @IBOutlet weak var webView: UIWebView!
     

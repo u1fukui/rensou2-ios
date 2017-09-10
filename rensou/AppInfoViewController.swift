@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class AppInfoViewController: UIViewController {
+class AppInfoViewController: BaseViewController {
 
     @IBOutlet weak var gadBannerView: GADBannerView!
     
