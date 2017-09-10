@@ -27,6 +27,7 @@ class RankingViewController: BaseViewController, UITableViewDataSource {
         super.viewDidLoad()
         initDateFormatter()
         initNavigationBar()
+        initRoomTypeTheme()
         initTableView()
         setupBannerView(gadBannerView)
     }
@@ -51,7 +52,14 @@ class RankingViewController: BaseViewController, UITableViewDataSource {
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"ranking_title"))
     }
     
+    func initRoomTypeTheme() {
+        if let roomType = roomType {
+            self.view.backgroundColor = UIColor(hex: roomType.backgroundColor())
+        }
+    }
+    
     func initTableView() {
+        tableView.backgroundColor = UIColor.clear
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = UIColor(hex: roomType!.backgroundColor())
@@ -92,7 +100,6 @@ class RankingViewController: BaseViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rankingRensouCell", for: indexPath) as! RankingRensouCell
         cell.setRensou(rensou: rensous![indexPath.row], rank: indexPath.row + 1, dateFormatter: dateFormatter)
-        cell.backgroundColor = UIColor(hex: roomType!.backgroundColor())
         return cell
     }
 }

@@ -20,7 +20,7 @@ class RankingRensouCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.backgroundColor = UIColor.clear
     }
 
     func setRensou(rensou: Rensou, rank: Int, dateFormatter: DateFormatter) {

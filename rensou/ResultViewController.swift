@@ -29,6 +29,7 @@ class ResultViewController: BaseViewController, UITableViewDataSource, ResultRen
         super.viewDidLoad()
         initDateFormatter()
         initNavigationBar()
+        initRoomTypeTheme()
         initTableView()
         setupBannerView(gadBannerView)
     }
@@ -44,7 +45,14 @@ class ResultViewController: BaseViewController, UITableViewDataSource, ResultRen
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.plain, target: self, action: #selector(ResultViewController.tapRankingButton))
     }
     
+    func initRoomTypeTheme() {
+        if let roomType = roomType {
+            self.view.backgroundColor = UIColor(hex: roomType.backgroundColor())
+        }
+    }
+    
     func initTableView() {
+        tableView.backgroundColor = UIColor.clear
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -89,8 +97,7 @@ class ResultViewController: BaseViewController, UITableViewDataSource, ResultRen
         }
         cell.delegate = self
         cell.setRensou(rensous![indexPath.row], roomType: roomType!, dateFormatter: dateFormatter)
-        cell.backgroundColor = UIColor(hex: roomType!.backgroundColor())
-
+        
         return cell
     }
     

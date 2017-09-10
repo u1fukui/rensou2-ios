@@ -39,6 +39,7 @@ class ResultRensouCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = UIColor.clear
         likeButton.setImage(UIImage(named: "button_like_off"), for: UIControlState.normal)
     }
 
