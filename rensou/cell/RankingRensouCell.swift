@@ -27,5 +27,6 @@ class RankingRensouCell: UITableViewCell {
         rankIcon.image = UIImage(named: "rank" + rank.description + "_icon")
         rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
         createdAtLabel.text = dateFormatter.string(from: rensou.createdAt)
+        likeCountLabel.text = rensou.likeCount.description + "件"
     }
 }
