@@ -52,6 +52,10 @@ class AppInfoViewController: BaseViewController {
         let subject = "連想ゲーム".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         let url = NSURL.init(string: "mailto:" + mailAddress + "?Subject=" + subject!)
         
-        UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url! as URL)
+        }
     }
 }
