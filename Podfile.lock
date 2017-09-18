@@ -1,26 +1,33 @@
 PODS:
   - APIKit (3.1.1):
     - Result (~> 3.0)
-  - Firebase/AdMob (4.0.2):
+  - Firebase/AdMob (4.1.1):
     - Firebase/Core
-    - Google-Mobile-Ads-SDK (= 7.20.0)
-  - Firebase/Core (4.0.2):
-    - FirebaseAnalytics (= 4.0.1)
-    - FirebaseCore (= 4.0.2)
-  - FirebaseAnalytics (4.0.1):
+    - Google-Mobile-Ads-SDK (= 7.23.0)
+  - Firebase/Core (4.1.1):
+    - FirebaseAnalytics (= 4.0.3)
+    - FirebaseCore (= 4.0.6)
+  - FirebaseAnalytics (4.0.3):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (4.0.2):
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.6):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (2.0.0):
+    - nanopb (~> 0.3)
+  - FirebaseInstanceID (2.0.2):
     - FirebaseCore (~> 4.0)
-  - Google-Mobile-Ads-SDK (7.20.0)
+  - Google-Mobile-Ads-SDK (7.23.0)
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - Result (3.2.3)
-  - SVProgressHUD (2.1.2)
+  - SVProgressHUD (2.2.1)
 
 DEPENDENCIES:
   - APIKit (~> 3.1)
@@ -34,19 +41,20 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SVProgressHUD:
-    :commit: 7e3139d2d56b336e48c178cc4605966191f4ac24
+    :commit: fe8e9d9a4bd8974fdd1b1d3eee85ee6d8141da83
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
   APIKit: 7460983f490d3bde6aaaaa4164d18c9865a6f91d
-  Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
-  FirebaseAnalytics: 4d7040fefc3cd8b291cde35f12cf063d7963f15d
-  FirebaseCore: 1a8bf6c795ad07d2918278657954ffd2552e9c17
-  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
-  Google-Mobile-Ads-SDK: 168312cdc167fa22746d4ea8e839fc4825dd2966
+  Firebase: 052c0de688fc87b414996eea13e223dd9fee3fa2
+  FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
+  FirebaseCore: 28def3c643989c97ea5a69ea5000f5fa9902b9fd
+  FirebaseInstanceID: c4c7fca62c7b7330caee5da04f19a37ea37bb1c1
+  Google-Mobile-Ads-SDK: a43dc8efdb566c74d00ac6934c781de969348d80
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
-  SVProgressHUD: d65371a8e4482380deddb9fe60e14e59ddb30eb3
+  SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
 
 PODFILE CHECKSUM: 568068734b4035e199e7ad59c3d9e4e1a40f0eaa
 
