@@ -24,11 +24,11 @@ class BaseViewController: UIViewController {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         gadBannerView.adUnitID = appDelegate.getConfigValue(key: "AD_UNIT_ID_FOR_BANNER") as? String
         gadBannerView.rootViewController = self
-    
+            
         let request = GADRequest()
-        if TARGET_OS_SIMULATOR == 1 {
+        #if arch(i386) || arch(x86_64)
             request.testDevices = [kGADSimulatorID]
-        }
+        #endif
         gadBannerView.load(request)
     }
 }
