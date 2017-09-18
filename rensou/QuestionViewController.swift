@@ -180,6 +180,7 @@ class QuestionViewController: BaseViewController, UITextFieldDelegate {
             case .success(let response):
                 SVProgressHUD.dismiss()
                 
+                self.textField.text = ""
                 self.resultRensous = response
                 self.performSegue(withIdentifier: "submitRensou",sender: nil)
             case .failure(let error):
