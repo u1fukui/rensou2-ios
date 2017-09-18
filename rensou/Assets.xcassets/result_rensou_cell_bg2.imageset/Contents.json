@@ -1,11 +1,39 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 248,
+          "height" : 2
+        },
+        "cap-insets" : {
+          "bottom" : 16,
+          "top" : 45,
+          "right" : 31,
+          "left" : 37
+        }
+      },
       "idiom" : "universal",
       "filename" : "rensou_cell_bg2.png",
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 478,
+          "height" : 5
+        },
+        "cap-insets" : {
+          "bottom" : 30,
+          "top" : 94,
+          "right" : 72,
+          "left" : 80
+        }
+      },
       "idiom" : "universal",
       "filename" : "rensou_cell_bg2@2x.png",
       "scale" : "2x"
