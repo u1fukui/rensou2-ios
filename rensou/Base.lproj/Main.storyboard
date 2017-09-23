@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gfu-1l-WLh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gfu-1l-WLh">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -116,7 +116,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqn-WO-BS1">
-                                        <rect key="frame" x="45" y="80" width="170" height="80"/>
+                                        <rect key="frame" x="45" y="80" width="195" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="dbT-yN-JAT"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="ey7-ca-oll"/>
@@ -128,6 +128,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lqn-WO-BS1" secondAttribute="trailing" constant="80" id="KoV-yd-Mos"/>
                                     <constraint firstAttribute="height" constant="240" id="jks-4O-X8f"/>
                                     <constraint firstAttribute="width" constant="320" id="rNe-9x-Q65"/>
                                     <constraint firstItem="lqn-WO-BS1" firstAttribute="top" secondItem="P0s-vH-bhc" secondAttribute="top" constant="80" id="rPy-ah-PLT"/>
@@ -555,7 +556,7 @@
             <objects>
                 <navigationController id="gfu-1l-WLh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="06n-eg-TAD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -577,7 +578,7 @@
         <image name="question_theme_bg" width="320" height="240"/>
         <image name="question_theme_suffix" width="95" height="36"/>
         <image name="rank1_icon" width="60" height="26"/>
-        <image name="ranking_cell_bg" width="320" height="120"/>
-        <image name="result_rensou_cell_bg1" width="320" height="66"/>
+        <image name="ranking_cell_bg" width="319" height="118"/>
+        <image name="result_rensou_cell_bg1" width="318" height="64"/>
     </resources>
 </document>
