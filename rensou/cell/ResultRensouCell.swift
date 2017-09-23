@@ -67,6 +67,11 @@ class ResultRensouCell: UITableViewCell {
             likeCountLabel.isHidden = true
             likeButton.isHidden = true
             reportButton.isHidden = true
+        } else if DataSaveHelper.sharedInstance.isBlockedUser(rensou) {
+            rensouLabel.text = "ブロックしているユーザの投稿です"
+            likeCountLabel.isHidden = true
+            likeButton.isHidden = true
+            reportButton.isHidden = true
         } else {
             likeButton.setImage(UIImage(named: roomType.likeButtonImageName()), for: UIControlState.selected)
             rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)

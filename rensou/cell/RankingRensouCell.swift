@@ -24,9 +24,18 @@ class RankingRensouCell: UITableViewCell {
     }
 
     func setRensou(rensou: Rensou, rank: Int, dateFormatter: DateFormatter) {
-        rankIcon.image = UIImage(named: "rank" + rank.description + "_icon")
-        rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
-        createdAtLabel.text = dateFormatter.string(from: rensou.createdAt)
-        likeCountLabel.text = rensou.likeCount.description + "件"
+        if DataSaveHelper.sharedInstance.isReportedRensou(rensou) {
+            rensouLabel.text = "この投稿は通報済みです"
+            likeCountLabel.isHidden = true
+        } else if DataSaveHelper.sharedInstance.isBlockedUser(rensou) {
+            rensouLabel.text = "ブロックしているユーザの投稿です"
+            likeCountLabel.isHidden = true
+        } else {
+            rankIcon.image = UIImage(named: "rank" + rank.description + "_icon")
+            rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
+            createdAtLabel.text = dateFormatter.string(from: rensou.createdAt)
+            likeCountLabel.text = rensou.likeCount.description + "件"
+            likeCountLabel.isHidden = false
+        }
     }
 }

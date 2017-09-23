@@ -12,6 +12,8 @@ struct Rensou: Decodable {
     
     let rensouId: Int
     
+    let userId: Int
+    
     let likeCount: Int
     
     let keyword: String
@@ -22,6 +24,7 @@ struct Rensou: Decodable {
     
     private enum CodingKeys: String, CodingKey {
         case rensouId = "id"
+        case userId = "user_id"
         case likeCount = "favorite"
         case keyword
         case oldKeyword = "old_keyword"

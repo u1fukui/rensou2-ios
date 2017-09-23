@@ -163,7 +163,7 @@ class ResultViewController: BaseViewController, UITableViewDataSource, ResultRen
         let defaultAction: UIAlertAction = UIAlertAction(title: "通報する",
                                                          style: UIAlertActionStyle.default,
                                                          handler: {(action: UIAlertAction!) -> Void in
-                                                            self.reportRensou(cell: cell, rensou: rensou)
+                                                            self.showConfirmBlockUser(cell: cell, rensou: rensou)
         })
         
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル",
@@ -175,16 +175,44 @@ class ResultViewController: BaseViewController, UITableViewDataSource, ResultRen
         present(alert, animated: true, completion: nil)
     }
     
-    func reportRensou(cell: ResultRensouCell, rensou: Rensou) {
+    func showConfirmBlockUser(cell: ResultRensouCell, rensou: Rensou) {
+        let alert: UIAlertController = UIAlertController(title: "確認",
+                                                         message: "この投稿をしたユーザをブロックしますか？ブロックすると、このユーザが投稿したもの全てが非表示になります。",
+                                                         preferredStyle:  UIAlertControllerStyle.alert)
+        
+        let defaultAction: UIAlertAction = UIAlertAction(title: "ブロックする",
+                                                         style: UIAlertActionStyle.default,
+                                                         handler: {(action: UIAlertAction!) -> Void in
+                                                            self.reportRensou(cell: cell, rensou: rensou, needUserBlock: true)
+        })
+        
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル",
+                                                        style: UIAlertActionStyle.cancel,
+                                                        handler: {(action: UIAlertAction!) -> Void in
+                                                            self.reportRensou(cell: cell, rensou: rensou, needUserBlock: false)
+        })
+        
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func reportRensou(cell: ResultRensouCell, rensou: Rensou, needUserBlock: Bool) {
         SVProgressHUD.show()
         Session.send(RensouAPI.ReportRensouRequest(rensouId: rensou.rensouId)) { result in
             switch result {
             case .success( _):
                 SVProgressHUD.dismiss()
-                DataSaveHelper.sharedInstance.setReportedRensou(rensou)
-                let indexPath = self.tableView.indexPath(for: cell)
-                if let indexPath = indexPath {
-                    self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                
+                if needUserBlock {
+                    DataSaveHelper.sharedInstance.setBlockedUser(rensou.userId)
+                    self.tableView.reloadData()
+                } else {
+                    DataSaveHelper.sharedInstance.setReportedRensou(rensou)
+                    let indexPath = self.tableView.indexPath(for: cell)
+                    if let indexPath = indexPath {
+                        self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                    }
                 }
             case .failure(let error):
                 SVProgressHUD.dismiss()

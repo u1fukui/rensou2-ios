@@ -154,8 +154,15 @@ class QuestionViewController: BaseViewController, UITextFieldDelegate {
                 SVProgressHUD.dismiss()
                 
                 self.themeRensou = response
-                self.themeLabel.text = response.keyword
+           
+                if DataSaveHelper.sharedInstance.isBlockedUser(response) {
+                    self.themeLabel.text = "ブロックしているユーザの投稿です"
+                } else {
+                    self.themeLabel.text = response.keyword
+                }
+                
                 self.inputViewsContainer.isHidden = false
+
             case .failure(let error):
                 SVProgressHUD.dismiss()
                 ApiErrorHandler.showErrorAlert(alertType: ApiErrorHandler.AlertType.RELOAD,
