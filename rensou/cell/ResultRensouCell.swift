@@ -61,6 +61,7 @@ class ResultRensouCell: UITableViewCell {
 
     func setRensou(_ rensou: Rensou, roomType: RoomType, dateFormatter: DateFormatter) {
         self.rensou = rensou
+        createdAtLabel.text = dateFormatter.string(from: rensou.createdAt)
         
         if DataSaveHelper.sharedInstance.isReportedRensou(rensou) {
             rensouLabel.text = "この投稿は通報済みです"
@@ -73,9 +74,9 @@ class ResultRensouCell: UITableViewCell {
             likeButton.isHidden = true
             reportButton.isHidden = true
         } else {
-            likeButton.setImage(UIImage(named: roomType.likeButtonImageName()), for: UIControlState.selected)
             rensouLabel.attributedText = RensouUtil.makeRensouAtributtedString(rensou)
-            createdAtLabel.text = dateFormatter.string(from: rensou.createdAt)
+            
+            likeButton.setImage(UIImage(named: roomType.likeButtonImageName()), for: UIControlState.selected)
             likeButton.isSelected = DataSaveHelper.sharedInstance.isLikedRensou(rensou)
             likeButton.isHidden = false
             reportButton.isHidden = false
