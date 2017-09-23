@@ -79,8 +79,8 @@ class ResultRensouCell: UITableViewCell {
             likeButton.setImage(UIImage(named: roomType.likeButtonImageName()), for: UIControlState.selected)
             likeButton.isSelected = DataSaveHelper.sharedInstance.isLikedRensou(rensou)
             likeButton.isHidden = false
-            reportButton.isHidden = false
-            
+            reportButton.isHidden = rensou.userId == DataSaveHelper.sharedInstance.loadUserId()
+
             var likeCount = rensou.likeCount
             if let delegate = delegate {
                 if delegate.isChangedLikeState(rensou) == true {
